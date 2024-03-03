@@ -1,0 +1,141 @@
+.img-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.app-img{
+    width: 700px;
+    padding: 20px;
+    border-radius: 50px;
+}
+.upper-container{
+    width: 100wh;
+    height: 400px;
+    background-color: #EBD96B;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.upper-contain{
+    padding: 80px;
+    /* height: auto; */
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.footer-input{
+    min-width: 200px;
+    max-width: 350px;
+
+}
+ 
+.upper-text{
+    font-size: 35px;
+    font-weight: 900;
+    color: #FFFFFF;
+}
+.text-sm{
+    font-size: 18px;
+    font-weight: 500;
+    color: #FFFFFF;
+}
+.lower-footer{
+    width: 100wh;
+    height: auto;
+    background-color: #000000;
+    display: flex;
+    padding-bottom:30px;
+    justify-content: space-between;
+}
+.icon-div{
+    display: flex; 
+    justify-content: flex-start;
+    gap: 20px;
+    padding-top: 20px;
+    
+}
+.icon-div>span>i{
+    background-color: #EBD96B;
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    font-size: 20px;
+    justify-content: center;
+    display: flex;
+    border-radius: 30%;
+}
+.footer-right-contain{
+    list-style-type: none;
+    align-items: flex-start;
+    padding-top: 45px;
+    line-height: 40px;
+    display: flex;
+}
+@media only screen and (max-width:500px) {
+    .app-img{
+        width: 400px;
+        padding: 20px;
+        border-radius: 40px;
+    }
+    .upper-contain{
+        padding:0px ;
+    }
+.upper-text{
+    font-size: 25px;
+    text-align: center;
+    font-weight: 900;
+    color: #FFFFFF;
+}
+.text-sm{
+    font-size: 15px;
+    font-weight: 500;
+    color: #FFFFFF;
+}
+.footer-right-contain{
+    list-style-type: none;
+    align-items: flex-start;
+    padding-top: 60px;
+    line-height: 30px;
+    display: flex;
+}
+.upper-text{
+    font-size: 25px;
+    font-weight: 900;
+    color: #FFFFFF;
+
+}
+.icon-div>span>i{
+    background-color: #EBD96B;
+    width: 30px;
+    height: 30px;
+    align-items: center;
+    font-size: 15px;
+    justify-content: center;
+    display: flex;
+    border-radius: 30%;
+}
+.icon-div{
+    display: flex; 
+    justify-content: flex-start;
+    gap: 15px;
+    padding-top: 20px;
+}
+.lower-footer{
+    width: 100wh;
+    height: auto;
+    background-color: #000000;
+    display: flex;
+    /* justify-content: space-between; */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.main-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+}

@@ -1,0 +1,80 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.title{
+    font-family: 'Poppins';
+    font-size: 25px;
+    font-weight: 500;
+    letter-spacing: -0.04em;
+    text-align: left;
+    
+}
+.explore{
+    color: #7F7F7F;
+    font-size: 15px;
+    font-weight: 400;
+
+}
+.card-body{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    /* width: auto; */
+    max-width: 988px;
+    margin: 0 auto; 
+}
+
+.leaf-img{
+    position: absolute;
+    padding-top: 60px;
+    width: 100px;
+    padding-left: 120px;
+    height: 50px;
+ }
+.heading{
+    font-size: 35px;
+    
+    font-weight: 900;
+    padding: 35px 0px 50px 35px;
+    /* width: 100% ; */
+    /* max-width: 700px; */
+    /* margin: 0 1rem; */
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.category-Card{
+    /* width: calc(33.33% - 20px);  */
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: none;
+    height: 500px;
+    width: 300px;
+}
+.card-box{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;}
+.category-img{
+    width: 280px;
+    height: 400px;
+    object-fit: cover;
+    overflow: hidden;
+}
+.young-Card{
+    width: 490px;
+
+}
+.young-img{
+    width: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+    .category-img {
+        height: 300px; 
+        min-width: 200px; 
+    }
+}
+@media only screen and (max-width: 576px) {
+    .category-img {
+        height: 250px; /* Set an even shorter height for smaller devices */
+    }
+}

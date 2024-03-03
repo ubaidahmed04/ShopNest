@@ -1,0 +1,55 @@
+@media only screen and (min-width: 900px) {
+ 
+.logo {
+  font-family: Poppins;
+  font-size: 40px;
+  font-weight: 900;
+  line-height: 60px;
+  letter-spacing: 0.03em;
+
+  color: #242323;
+}
+.tab{
+    font-family: Poppins;
+font-size: 22px;
+font-weight: 500;
+line-height: 33px;
+letter-spacing: 0.01em;
+
+
+}
+}
+@media only screen and (max-width: 900px) {
+    .logo {
+        font-family: Poppins;
+        font-size: 30px;
+        font-weight: 700;
+        line-height: 40px;
+        letter-spacing: 0.02em;
+
+        color: #242323;
+      }
+      .tab{
+        font-family: Poppins;
+    font-size: 18px;
+    font-weight: 500;
+
+    letter-spacing: 0.01rem;
+
+    text-align: center;
+    
+    }
+    
+}
+
+.nav-icon {
+  right: 6;
+  /* z-index: -1; */
+}
+
+@media (min-width: 600px) {
+  .nav-icon {
+   display: none !important;
+   
+  }
+}
