@@ -1,19 +1,77 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {Form} from 'react-bootstrap';
+import Swal from 'sweetalert2';
 import { Link } from 'react-router-dom';
 import './Style.css'
 import { useForm } from "react-hook-form"
 import Login from './Login';
+import app from './../Firebase/Firebase';
+import { getAuth, createUserWithEmailAndPassword,onAuthStateChanged } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
+
+console.log(app)
 
 
 function Register() {
+  const auth = getAuth(app);
+  const navigate = useNavigate();
+
+ const [inputType,setInputType] = useState("password")
     const {
         register,
         handleSubmit,
         watch,
+        reset,
         formState: { errors },
       } = useForm()
-      const onSubmit = (data) => console.log(data)    
+      const onSubmit = async(data) =>{
+        console.log(data)    
+        try{
+        createUserWithEmailAndPassword(auth,data.email,data.password,data.name)
+        .then((userCredential) => {
+          // Signed up 
+          const user = userCredential.user;
+          console.log(user)
+          Swal.fire({
+            title: "Good job!",
+            text: "Sign up Successfully",
+            icon: "success"
+          });
+          onAuthStateChanged(auth, (user) => {
+            if (user) {
+              const uid = user.uid;
+              navigate("/");
+              // ...
+            } else {
+              // User is signed out
+              // ...
+            }
+          });
+          reset();          
+         
+        })
+        
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          Swal.fire({
+            icon: "error",
+            title: errorCode,
+            text: errorMessage,
+          });
+          // ..
+      })
+      }
+      catch(error)  {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(first)
+        
+        // ..
+      }
+    }
+       
+      
 
   return (
 <div>
@@ -21,22 +79,32 @@ function Register() {
    <div className="content">
      <header>SignUp Form</header>
      <Form onSubmit={handleSubmit(onSubmit)}>
+     <div className="field mb-3">
+         <span className="fa fa-user " />
+         <input type="text"
+          required="" 
+          {...register("name")}
+          placeholder=" Name" />
+       </div>
        <div className="field">
          <span className="fa fa-user" />
          <input type="email"
           required="" 
           {...register("email")}
-          placeholder="Email or Phone" />
+          placeholder="myemail@gmail.com" 
+          />
        </div>
        <div className="field space">
          <span className="fa fa-lock" />
          <input
-           type="password"
+          type={inputType}
            className="pass-key"
+          placeholder="password" 
+           
            required=""
            {...register("password")}
          />
-         <span className="show">SHOW</span>
+         <span className="show"  onClick={() =>setInputType(inputType === 'text' ? 'password' : 'text')}>SHOW</span>
        </div>
        <div className="pass">
          <a >Forgot Password?</a>
@@ -55,7 +123,7 @@ function Register() {
       
      <div className="signup">
        Already have an account?
-       <Link to={'/Login'}>Login Now</Link>
+       <Link to={'/Login'}>Login </Link>
      </div>
    </div>
  </div>

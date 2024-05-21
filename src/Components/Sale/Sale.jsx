@@ -15,7 +15,7 @@ function Sale() {
                     <div className='text-2 '>SALE NOW</div> 
                     <div className='text-3 '>Spend minimal $100 get 30% off
                     voucher code for your next purchase</div> 
-                    <div className='text-4 pt-4'>1 June - 10 June 2021</div> 
+                    <div className='text-4 pt-4'>1 June - 10 June 2024</div> 
                     <div className='text-3  pb-4'>*Terms & Conditions apply</div> 
                     <Button variant='dark'>SHOP NOW</Button> 
 

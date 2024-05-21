@@ -81,9 +81,9 @@ function DrawerAppBar(props) {
               </Button>
             ))}
           </Box>
-          <Link to={'register'}>
+          <Link to={'./register'}>
           <Button variant="contained" style={{backgroundColor:"#FFDD10"}}  color="success">
-            Success
+            Sign Up
           </Button>
           </Link>
         </Toolbar>
