@@ -130,3 +130,15 @@
   font-size: 1.2rem;
   font-weight: 500;
 }
+.google-btn{
+  /* background-color: aliceblue; */
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+  display: flex;
+  font-size: 18px;
+  font-weight: 500;
+  font-family: 'Poppins',sans-serif;
+
+
+}

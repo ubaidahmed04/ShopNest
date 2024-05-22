@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
+import { createContext, useContext } from "react";
+import googleIcon from "../Images/google.png";
+
 import "./Style.css";
 import {
   getAuth,
@@ -10,16 +13,19 @@ import {
   signInWithEmailAndPassword,
   GoogleAuthProvider,
   signInWithPopup,
-  // auth,
+  signOut,
 } from "firebase/auth";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
+import app from "../Firebase/Firebase";
 
 function Login() {
   const navigate = useNavigate();
-  const auth = getAuth();
+  const auth = getAuth(app);
   const provider = new GoogleAuthProvider();
+  const firebaseAuth = getAuth(app);
 
+  const [inputType, setInputType] = useState("password");
 
   const {
     register,
@@ -34,12 +40,12 @@ function Login() {
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
-        console.log(user);
         Swal.fire({
           title: "Good job!",
           text: "Sign up Successfully",
           icon: "success",
         });
+
         reset();
         onAuthStateChanged(auth, (user) => {
           if (user) {
@@ -62,7 +68,6 @@ function Login() {
       });
   };
   const SignWithGoogle = () => {
-  
     signInWithPopup(auth, provider)
       .then((result) => {
         const credential = GoogleAuthProvider.credentialFromResult(result);
@@ -72,29 +77,36 @@ function Login() {
         onAuthStateChanged(auth, (user) => {
           if (user) {
             const uid = user.uid;
+            reset();
+
             navigate("/");
             // ...
           } else {
             // User is signed out
-            // ...
           }
         });
-
-        // Add any other actions you need to perform on successful sign-in
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        const email = error.customData?.email; // Use optional chaining to avoid undefined error
-        Swal.fire({
-          icon: "error",
-          title: errorCode,
-          text: errorMessage,
-        });
-        const credential = GoogleAuthProvider.credentialFromError(error);
-        // Handle any additional error logic here
+        const email = error.customData?.email;
       });
   };
+  const logOut = () => {
+    signOut(auth)
+      .then(() => {
+        navigate("register");
+        Swal.fire({
+          title: "Good Job!",
+          text: "Log Out ",
+          icon: "success",
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+  // console.log(onSubmit);
   return (
     <div>
       <div className="bg-img">
@@ -113,42 +125,47 @@ function Login() {
             <div className="field space">
               <span className="fa fa-lock" />
               <input
-                type="password"
+                type={inputType}
                 className="pass-key"
                 required=""
                 {...register("password")}
                 placeholder="Password"
               />
-              <span className="show">SHOW</span>
+              <span
+                className="show"
+                onClick={() => {
+                  setInputType(inputType === "text" ? "password" : "text");
+                }}
+              >
+                SHOW
+              </span>
             </div>
             <div className="pass">
               <a>Forgot Password?</a>
             </div>
             <div className="field">
-              <input
-                type="submit"
-                // onClick={()=>firebase.LoginUser(email,password)}
-
-                defaultValue="LOGIN"
-              />
+              <input type="submit" defaultValue="LOGIN" />
             </div>
           </Form>
           <div className="login">Or login with</div>
 
           <div className=" ">
-            {/* <div className=" ">
-            
-       </div> */}
             <div>
-              <Button onClick={SignWithGoogle}>LogIn With Google</Button>
               <Button
+                // variant="outlined"
+                className=" google-btn"
+                 onClick={SignWithGoogle}
+              >
+                <i class="fa-brands fa-google"></i>
+                Continue with Google
+              </Button>
+
+              {/* <Button
                 variant="danger"
-                onClick={() => {
-                  firebase.LogOut();
-                }}
+                onClick={() => {logOut}}
               >
                 LogOut
-              </Button>
+              </Button> */}
             </div>
           </div>
           <div className="signup">

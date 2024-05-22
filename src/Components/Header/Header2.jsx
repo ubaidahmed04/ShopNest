@@ -11,6 +11,7 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import MenuIcon from "@mui/icons-material/Menu";
+import MenuOpenSharpIcon from '@mui/icons-material/MenuOpenSharp';
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
@@ -22,7 +23,7 @@ const navItems = ["Home", "About", "Contact"];
 
 function DrawerAppBar(props) {
   const { window } = props;
-  const [mobileOpen, setMobileOpen] = React.useState(false);
+  const [mobileOpen, setMobileOpen] = React.useState(true); // Drawer shown by default
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
@@ -30,9 +31,10 @@ function DrawerAppBar(props) {
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
-      <Typography variant="h6" sx={{ my: 2 }}>
+      {/* <Typography variant="h6" sx={{ my: 2 }}>
         FASHION
-      </Typography>
+      </Typography> */}
+      <img src={logoimg} width={"70px"} alt="Logo" style={{ margin: '0 auto' }} />
       <Divider />
       <List>
         {navItems.map((item) => (
@@ -64,14 +66,18 @@ function DrawerAppBar(props) {
             onClick={handleDrawerToggle}
             sx={{ mr: 3, display: { sm: "none" } }}
           >
-            <MenuIcon />
+           <span className="">
+            {/* <MenuOpenSharpIcon /> */}
+            <i className="fa-solid fa-bars fa-2x menu-icon"></i>
+            </span>
+            {/* <MenuIcon color="dark"/> */}
           </IconButton>
           <Typography
             variant="h6"
             component="div"
             sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
           >
-            <img src={logoimg} className="" width={"70px"} alt="" />
+            <img src={logoimg} className="" width={"70px"} alt="Logo" />
           </Typography>
 
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
@@ -82,17 +88,17 @@ function DrawerAppBar(props) {
             ))}
           </Box>
           <Link to={'./register'}>
-          <Button variant="contained" style={{backgroundColor:"#FFDD10"}}  color="success">
-            Sign Up
-          </Button>
+            <Button
+              variant="contained"
+              style={{ backgroundColor: "#FFDD10" }}
+              color="success"
+              className="signup-btn"
+              sx={{ ml: 'auto' }}
+            >
+              Sign Up
+            </Button>
           </Link>
         </Toolbar>
-        <div
-          className="position-absolute d-flex flex-row-reverse nav-icon"
-          style={{ right: 6, zIndex: -1 }}
-        >
-          <img src={logoimg} className="" width={"50px"} alt="" />
-        </div>
       </AppBar>
       <nav>
         <Drawer
@@ -103,7 +109,7 @@ function DrawerAppBar(props) {
           ModalProps={{
             keepMounted: true, // Better open performance on mobile.
           }}
-          style={{ zIndex: "0" }}
+          // style={{ zIndex: "0" }}
           sx={{
             display: { xs: "block", sm: "none" },
             "& .MuiDrawer-paper": {
@@ -120,10 +126,6 @@ function DrawerAppBar(props) {
 }
 
 DrawerAppBar.propTypes = {
-  /**
-   * Injected by the documentation to work in an iframe.
-   * You won't need it on your project.
-   */
   window: PropTypes.func,
 };
 
