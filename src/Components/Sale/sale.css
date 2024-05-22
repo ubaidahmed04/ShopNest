@@ -97,4 +97,9 @@
    .left-contain>Button{
     width: 200px;
    }
+   .text-2{
+    width: 300px;
+    font-size: 45px;
+    font-weight: 900;
+}
 }

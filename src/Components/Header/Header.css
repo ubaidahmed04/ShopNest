@@ -48,6 +48,7 @@
   }
   .signup-btn{
     display: flex;
+    /* margin-left: 70px; */
     /* justify-content: flex-end; */
     /* align-items: flex-end; */
   }

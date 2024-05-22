@@ -67,6 +67,7 @@
     width: 100%;
 }
 
+
 @media only screen and (max-width: 768px) {
     .category-img {
         height: 300px; 
@@ -78,3 +79,14 @@
         height: 250px; /* Set an even shorter height for smaller devices */
     }
 }
+@media only screen and (max-width: 992px) {
+    .young-Card {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+  }
+  @media only screen and (max-width: 576px) {
+    .category-img {
+      height: 250px; /* Set an even shorter height for smaller devices */
+    }
+  }

@@ -110,7 +110,15 @@ function Login() {
   return (
     <div>
       <div className="bg-img">
+        <div>
+        <span>
+      <Link to={'/'}>
+    <i className="fa-solid arrow-icon fa-3x fa-arrow-left"></i>
+      </Link>
+      </span>
+        </div>
         <div className="content">
+       
           <header>Login Form</header>
           <Form onSubmit={handleSubmit(onSubmit)}>
             <div className="field">

@@ -1,4 +1,4 @@
-.rectangle-1{
+.rectangle-1 {
     width: auto;
     height: 90.14px;
     color: black;
@@ -6,101 +6,119 @@
     font-size: 60px;
     /* rotate: 2;  */
 }
-.bg-1{
+
+.bg-1 {
     background-color: #FFFFFF;
     transform: rotate(-2deg);
 }
 
-.bg-2{
+.bg-2 {
     background-color: transparent;
 }
-.bg-3{
+
+.bg-3 {
     background-color: #EBD96B;
     transform: rotate(-2deg);
-
-
 }
-.bg-4{
+
+.bg-4 {
     background-color: transparent;
 }
-.hero-section{
-    width: 100wh;
+
+.hero-section {
+    width: 100%;
+    max-width: 100vw;
     height: 550px;
     background-color: #F4F6F5;
-    /* background-color: aqua; */
     border-radius: 30px;
     padding: 10px;
-    margin: 30px;
-    padding-left: 150px;
+    margin: 30px auto;
     display: flex;
     flex-wrap: wrap;
     margin-top: 110px;
+    box-sizing: border-box;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
-.hero-img{
-    filter: drop-shadow(5px 5px 5px  #878686cc);
 
+.hero-img {
+    filter: drop-shadow(5px 5px 5px #878686cc);
 }
-.left-contain{
+
+.left-contain {
     flex: 1;
     max-width: 35%;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
 }
-.text{
+
+.text {
     padding-top: 10px;
     font-size: 25px;
     font-weight: 500;
     width: 300px;
 }
-.hero-img{
+
+.hero-img {
     flex: 1;
     max-width: 65%;
 }
-.hero-img> img{
+
+.hero-img > img {
     max-width: 100%;
     height: 500px;
     object-fit: contain;
 }
-.left-containg>button{
-   margin-top: 20px;
+
+.left-contain > button {
+    margin-top: 20px;
 }
 
 @media only screen and (max-width: 900px) {
-    .hero-img> img{
-        width: 600px;
+    .hero-img > img {
+        width: 100%;
+        height: auto;
     }
-    
 }
+
 @media only screen and (max-width: 667px) {
-    .hero-img{
+    .hero-img {
         display: none;
     }
-    .rectangle-1{
-        
-        width: 200px;
+
+    .rectangle-1 {
+        width: auto;
         color: black;
         font-weight: 800;
         font-size: 50px;
-}
-.hero-section{
+    }
+
+    .hero-section {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        width: 100wh;
-        height: 600px;
+        width: 100vw;
+        max-width: 100%;
+        height: auto;
         background-color: #F4F6F5;
         border-radius: 30px;
         padding: 30px;
-        margin: 20px;
+        margin: 20px auto;
         margin-top: 110px;
+        box-sizing: border-box;
+    }
 
-}
-.left-contain{
-    flex: 1;
-    max-width: 35%;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-}
+    .left-contain {
+        flex: 1;
+        max-width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .text {
+        width: auto;
+        text-align: center;
+    }
 }

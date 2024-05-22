@@ -23,24 +23,30 @@ const navItems = ["Home", "About", "Contact"];
 
 function DrawerAppBar(props) {
   const { window } = props;
-  const [mobileOpen, setMobileOpen] = React.useState(true); // Drawer shown by default
+  const [mobileOpen, setMobileOpen] = React.useState(false); // Drawer shown by default
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
   };
 
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
-      {/* <Typography variant="h6" sx={{ my: 2 }}>
-        FASHION
-      </Typography> */}
+    <Box onClick={handleDrawerToggle}
+    sx={{
+      fontWeight:800,
+      textAlign: "center",
+      // fontFamily:,
+      "&:hover": {
+        backgroundColor: "#FFF3A2", // Change to your desired color
+        boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.2)",
+        },
+    }}>
       <img src={logoimg} width={"70px"} alt="Logo" style={{ margin: '0 auto' }} />
       <Divider />
       <List>
         {navItems.map((item) => (
           <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: "center" }}>
-              <ListItemText primary={item} />
+            <ListItemButton sx={{ textAlign: "center", }}>
+              <ListItemText primary={item}  />
             </ListItemButton>
           </ListItem>
         ))}
@@ -64,13 +70,11 @@ function DrawerAppBar(props) {
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
-            sx={{ mr: 3, display: { sm: "none" } }}
+            sx={{ mr: 19, display: { sm: "none" } }}
           >
            <span className="">
-            {/* <MenuOpenSharpIcon /> */}
             <i className="fa-solid fa-bars fa-2x menu-icon"></i>
             </span>
-            {/* <MenuIcon color="dark"/> */}
           </IconButton>
           <Typography
             variant="h6"
@@ -92,7 +96,6 @@ function DrawerAppBar(props) {
               variant="contained"
               style={{ backgroundColor: "#FFDD10" }}
               color="success"
-              className="signup-btn"
               sx={{ ml: 'auto' }}
             >
               Sign Up
@@ -107,9 +110,8 @@ function DrawerAppBar(props) {
           open={mobileOpen}
           onClose={handleDrawerToggle}
           ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
+            keepMounted: true, 
           }}
-          // style={{ zIndex: "0" }}
           sx={{
             display: { xs: "block", sm: "none" },
             "& .MuiDrawer-paper": {

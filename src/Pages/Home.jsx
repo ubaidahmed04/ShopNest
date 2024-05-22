@@ -17,12 +17,12 @@ function Home() {
         {/* <Header/> */}
         <Head/>
         <HeroSection/>
-        <Brand/>
+         <Brand/>
         <Sale/>
         <CardProduct/>
         <YoungCategory/>
         <UpperFooter/>
-        <LowerFooter/>
+        <LowerFooter/> 
         
     </div>
   )

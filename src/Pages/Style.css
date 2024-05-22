@@ -12,9 +12,13 @@
   background-size: contain;
   object-fit: cover;
   background-position: center;
+  /* position: relative; */
+  /* width: fit-content; */
+  /* display: inline-block; */
+
 }
 .bg-img:after{
-  position: absolute;
+  position: relative;
   content: '';
   top: 0;
   left: 0;
@@ -139,6 +143,10 @@
   font-size: 18px;
   font-weight: 500;
   font-family: 'Poppins',sans-serif;
-
-
+}
+.arrow-icon{
+  color: aliceblue;
+  margin: 9px;
+  cursor: pointer;
+  position: absolute;
 }

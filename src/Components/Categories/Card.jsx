@@ -1,6 +1,8 @@
 import React from "react";
 import "./Category.css";
 import category1 from "../../Images/category1.png";
+import category2 from "../../Images/category2.png";
+import category3 from "../../Images/category3.png";
 import { Card, Button } from "react-bootstrap";
 
 function CardProduct() {
@@ -41,7 +43,7 @@ function CardProduct() {
             <Card.Img
               variant="top"
               className="category-img img-fluid"
-              src={category1}
+              src={category2}
             />
             <Card.Body>
               <Card.Title className="title">Hoodies & Sweetshirt</Card.Title>
@@ -63,7 +65,7 @@ function CardProduct() {
             <Card.Img
               variant="top"
               className="category-img img-fluid"
-              src={category1}
+              src={category3}
             />
             <Card.Body>
               <Card.Title className="title">Hoodies & Sweetshirt</Card.Title>

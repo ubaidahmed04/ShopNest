@@ -1,6 +1,8 @@
 import React from 'react'
 import { Card } from 'react-bootstrap'
 import category1 from '../../Images/category1.png'
+import GirlImg1 from '../../Images/girl-brand1.jpg'
+import GirlImg2 from '../../Images/girl-brand2.jpg'
 
 
 function YoungCategory() {
@@ -18,8 +20,8 @@ function YoungCategory() {
         <Card className="card-box">
           <Card.Img
             variant="top"
-            className="young-img img-fluid"
-            src={category1}
+            className="young-img1 img-fluid"
+            src={GirlImg1}
           />
           <Card.Body>
             <Card.Title className="title">Hoodies & Sweetshirt</Card.Title>
