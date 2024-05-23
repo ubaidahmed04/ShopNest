@@ -77,7 +77,6 @@ function Login() {
         onAuthStateChanged(auth, (user) => {
           if (user) {
             const uid = user.uid;
-            reset();
 
             navigate("/");
             // ...

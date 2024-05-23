@@ -11,7 +11,7 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import MenuIcon from "@mui/icons-material/Menu";
-import MenuOpenSharpIcon from '@mui/icons-material/MenuOpenSharp';
+import MenuOpenSharpIcon from "@mui/icons-material/MenuOpenSharp";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
@@ -30,23 +30,38 @@ function DrawerAppBar(props) {
   };
 
   const drawer = (
-    <Box onClick={handleDrawerToggle}
-    sx={{
-      fontWeight:800,
-      textAlign: "center",
-      // fontFamily:,
-      "&:hover": {
-        backgroundColor: "#FFF3A2", // Change to your desired color
-        boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.2)",
+    <Box
+      onClick={handleDrawerToggle}
+      sx={{
+        fontWeight: 800,
+        textAlign: "center",
+        // fontFamily:,
+        "&:hover": {
+          backgroundColor: "#c3c3c3", // Change to your desired color
+          boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.2)",
         },
-    }}>
-      <img src={logoimg} width={"70px"} alt="Logo" style={{ margin: '0 auto' }} />
+      }}
+    >
+      <img
+        src={logoimg}
+        width={"70px"}
+        alt="Logo"
+        style={{ margin: "0 auto" }}
+      />
       <Divider />
       <List>
         {navItems.map((item) => (
           <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: "center", }}>
-              <ListItemText primary={item}  />
+            <ListItemButton
+              sx={{
+                textAlign: "center",
+                "&:hover": {
+                  backgroundColor: "#c3c3c3", // Change to your desired color
+                  boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.2)",
+                },
+              }}
+            >
+              <ListItemText primary={item} />
             </ListItemButton>
           </ListItem>
         ))}
@@ -72,8 +87,8 @@ function DrawerAppBar(props) {
             onClick={handleDrawerToggle}
             sx={{ mr: 19, display: { sm: "none" } }}
           >
-           <span className="">
-            <i className="fa-solid fa-bars fa-2x menu-icon"></i>
+            <span className="">
+              <i className="fa-solid fa-bars fa-2x menu-icon"></i>
             </span>
           </IconButton>
           <Typography
@@ -81,7 +96,14 @@ function DrawerAppBar(props) {
             component="div"
             sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
           >
-            <img src={logoimg} className="" width={"70px"} alt="Logo" />
+            <Link to={"/"}>
+              <img
+                src={logoimg}
+                width={"70px"}
+                alt="Logo"
+                style={{ margin: "0 auto", cursor: "pointer" }}
+              />
+            </Link>
           </Typography>
 
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
@@ -91,12 +113,12 @@ function DrawerAppBar(props) {
               </Button>
             ))}
           </Box>
-          <Link to={'./register'}>
+          <Link to={"./register"}>
             <Button
               variant="contained"
               style={{ backgroundColor: "#FFDD10" }}
               color="success"
-              sx={{ ml: 'auto' }}
+              sx={{ ml: "auto" }}
             >
               Sign Up
             </Button>
@@ -110,7 +132,7 @@ function DrawerAppBar(props) {
           open={mobileOpen}
           onClose={handleDrawerToggle}
           ModalProps={{
-            keepMounted: true, 
+            keepMounted: true,
           }}
           sx={{
             display: { xs: "block", sm: "none" },
