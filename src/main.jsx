@@ -11,6 +11,7 @@ import {
 import Login from './Pages/Login.jsx';
 import Register from './Pages/Register.jsx';
 import Home from './Pages/Home.jsx';
+import About from './Pages/About.jsx';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -18,6 +19,7 @@ const router = createBrowserRouter(
     <Route path="/" element={<Home />}>
       </Route>
     <Route path="/home" element={<Home />}/>
+    <Route path="/about" element={<About />}/>
 
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
