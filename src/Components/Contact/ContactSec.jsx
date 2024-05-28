@@ -104,7 +104,7 @@ function ContactSec() {
             </div>
           </div>
         </div>
-        <div className="d-flex col-12 col-lg-6 col-md-6 flex-column text-field p-sm-3 p-5 ml-lg-5">
+        <div className="d-flex col-12 col-lg-6 col-md-6 flex-column text-field p-sm-3  ml-lg-5">
           <Form ref={form} onSubmit={handleSubmit(onSubmit)} className="d-flex flex-column gap-4">
             <div className="d-flex">
               <TextField
@@ -178,7 +178,7 @@ function ContactSec() {
                 }}
               />
             </div>
-            <div className="d-flex flex-grow-1">
+            <div className="d-flex">
               <TextField
                 id="filled-multiline-static"
                 label="Message"

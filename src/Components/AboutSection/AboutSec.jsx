@@ -4,7 +4,7 @@ import { TextField } from "@mui/material";
 function AboutSec() {
   return (
     <>
-      <div className="main fs-1 fw-bold">
+      <div className="about-page fs-1 fw-bold">
       This page is in progress...
 
        
