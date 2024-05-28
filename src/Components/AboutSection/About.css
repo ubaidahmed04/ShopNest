@@ -1,24 +1,5 @@
 .main{
     background-color: #F4F6F5;
-}
-.about-main{
-    /* background-color: aqua; */
     margin-top: 70px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    /* padding: 300px; */
-}
-.about-heading{
-    color: #FFDD00;
-    text-shadow: #989898;
-    font-size: 3rem;
-    text-shadow: 1px 1px 1px yellow, 0 0 .5em orangered, 0 0 0.1em orangered;
-
-}
-.ask{
-    color: #989898;
-    margin-bottom: 20px;
-    /* margin-top: 30px ; */
+    margin-bottom: 235px;
 }

@@ -1,0 +1,44 @@
+.main{
+    background-color: #F4F6F5;
+    margin-top: 70px;
+    
+
+}
+.contact-main{
+    /* background-color: aqua; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    /* padding: 300px; */
+}
+.contact-heading{
+    color: #FFDD00;
+    text-shadow: #989898;
+    font-size: 3rem;
+    text-shadow: 1px 1px 1px yellow, 0 0 .5em orangered, 0 0 0.1em orangered;
+
+}
+.ask{
+    color: #989898;
+    margin-bottom: 20px;
+    
+    /* margin-top: 30px ; */
+}
+.content-main{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: #FFFFFF;    
+    border-radius: 3px;
+    /* margin: 3px; */
+}
+.contact-links{
+    background-color: #1C2541;
+    border-radius: 1rem;
+    padding: 8px;
+    width: auto;
+  
+}

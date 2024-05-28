@@ -10,20 +10,18 @@ import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
-import MenuIcon from "@mui/icons-material/Menu";
-import MenuOpenSharpIcon from "@mui/icons-material/MenuOpenSharp";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import logoimg from "../../Images/logo.png";
 import { Link } from "react-router-dom";
+import logoimg from "../../Images/logo.png";
 
 const drawerWidth = 240;
 const navItems = ["Home", "About", "Contact"];
 
 function DrawerAppBar(props) {
   const { window } = props;
-  const [mobileOpen, setMobileOpen] = React.useState(false); // Drawer shown by default
+  const [mobileOpen, setMobileOpen] = React.useState(false);
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
@@ -35,7 +33,6 @@ function DrawerAppBar(props) {
       sx={{
         fontWeight: 800,
         textAlign: "center",
-        // fontFamily:,
         "&:hover": {
           backgroundColor: "#c3c3c3", // Change to your desired color
           boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.2)",
@@ -53,6 +50,8 @@ function DrawerAppBar(props) {
         {navItems.map((item) => (
           <ListItem key={item} disablePadding>
             <ListItemButton
+              component={Link}
+              to={`/${item.toLowerCase()}`}
               sx={{
                 textAlign: "center",
                 "&:hover": {
@@ -85,9 +84,9 @@ function DrawerAppBar(props) {
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
-            sx={{ mr: 19, display: { sm: "none" } }}
+            sx={{ mr: "auto", display: { sm: "none" } }}
           >
-            <span className="">
+            <span >
               <i className="fa-solid fa-bars fa-2x menu-icon"></i>
             </span>
           </IconButton>
@@ -108,12 +107,22 @@ function DrawerAppBar(props) {
 
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navItems.map((item) => (
-              <Button key={item} sx={{ color: "#000000" }}>
+              <Button
+                key={item}
+                sx={{
+                  color: "#000000",
+                  "&:hover": {
+                    backgroundColor: "#c3c3c3", // Change to your desired hover color
+                  },
+                }}
+                component={Link}
+                to={`/${item.toLowerCase()}`}
+              >
                 {item}
               </Button>
             ))}
           </Box>
-          <Link to={"./register"}>
+          <Link to={"/register"}>
             <Button
               variant="contained"
               style={{ backgroundColor: "#FFDD10" }}
