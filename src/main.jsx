@@ -13,6 +13,8 @@ import Register from './Pages/Register.jsx';
 import Home from './Pages/Home.jsx';
 import About from './Pages/About.jsx';
 import Contact from './Pages/Contact.jsx';
+import Products from './Pages/Products.jsx';
+import VarietyPage from './Pages/VarietyPage.jsx';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -22,6 +24,8 @@ const router = createBrowserRouter(
     <Route path="/home" element={<Home />}/>
     <Route path="/contact" element={<Contact />}/>
     <Route path="/about" element={<About />}/>
+    <Route path="/products" element={<Products />}/>
+    <Route path="/Categories" element={<VarietyPage />}/>
 
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />

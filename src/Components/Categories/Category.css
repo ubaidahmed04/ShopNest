@@ -51,16 +51,36 @@
     height: 500px;
     width: 300px;
 }
+@keyframes slideIn {
+    from{
+        transform: translateX(200px);
+    }
+    to{
+        transform: translateX(0);
+
+    }
+}
 .card-box{
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;}
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    transition:transform 0.3s,ease 0.3s;
+    /* transform: translateX(100px); */
+    animation: slideIn 1s ease-in 2s 1 normal none;
+}
 .category-img{
     width: 280px;
     height: 400px;
     object-fit: cover;
     overflow: hidden;
 }
+.card-box:hover{
+    transform: translateY(3px);
+    cursor: pointer;
+
+}
+
 .young-Card{
     width: 490px;
+    animation: slideIn 1s ease-in 2s 1 normal none;
 
 }
 .young-img{

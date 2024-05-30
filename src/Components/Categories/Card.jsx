@@ -24,7 +24,7 @@ function CardProduct() {
               src={category1}
             />
             <Card.Body>
-              <Card.Title className="title">Hoodies & Sweetshirt</Card.Title>
+              <Card.Title className="title">Hoodies & Shirt</Card.Title>
               <div className="d-flex justify-content-between ">
                 <div className="flex-column">
                   <Card.Text>
@@ -46,7 +46,7 @@ function CardProduct() {
               src={category2}
             />
             <Card.Body>
-              <Card.Title className="title">Hoodies & Sweetshirt</Card.Title>
+              <Card.Title className="title">Eletronic & Watches</Card.Title>
               <div className="d-flex justify-content-between">
                 <div>
                   <Card.Text>
@@ -68,7 +68,7 @@ function CardProduct() {
               src={category3}
             />
             <Card.Body>
-              <Card.Title className="title">Hoodies & Sweetshirt</Card.Title>
+              <Card.Title className="title">Branded Clothes</Card.Title>
               <div className="d-flex justify-content-between flex-row">
                 <div>
                   <Card.Text>

@@ -167,13 +167,13 @@ function ContactSec() {
                 helperText={errors.message ? 'Subject is required' : ''}
                 sx={{
                   '& .MuiInput-underline:before': {
-                    borderBottomColor: '#FFDD10', // normal state
+                    borderBottomColor: '#FFDD10', 
                   },
                   '& .MuiInput-underline:after': {
-                    borderBottomColor: '#FFDD10', // focused state
+                    borderBottomColor: '#FFDD10', 
                   },
                   '& .Mui-focused .MuiInputLabel-root': {
-                    color: '#FFDD10', // focused label color
+                    color: '#FFDD10', 
                   },
                 }}
               />
@@ -193,16 +193,16 @@ function ContactSec() {
                 helperText={errors.message ? 'Message is required' : ''}
                 sx={{
                   '& .MuiInput-underline:before': {
-                    borderBottomColor: '#FFDD10', // normal state
+                    borderBottomColor: '#FFDD10', 
                   },
                   '& .MuiInput-underline:after': {
-                    borderBottomColor: '#FFDD10', // focused state
+                    borderBottomColor: '#FFDD10', 
                   },
                   '& .Mui-focused .MuiInputLabel-root': {
-                    color: '#FFDD10', // focused label color
+                    color: '#FFDD10', 
                   },
                   '& .Mui-focused .MuiInputLabel-root:hover': {
-                    color: '#FFDD10', // focused label color
+                    color: '#FFDD10', 
                   }
                 }}
               />
@@ -219,6 +219,10 @@ function ContactSec() {
                   flexGrow: 1,
                   color: "#FFFFFF",
                   fontWeight: "bold",
+                  "&:hover": {
+                    backgroundColor: "#FFDD10",
+                    transform: "translateY(-5px)"
+                  },
                 }}
               >
                 Submit
@@ -232,3 +236,4 @@ function ContactSec() {
 }
 
 export default ContactSec;
+        

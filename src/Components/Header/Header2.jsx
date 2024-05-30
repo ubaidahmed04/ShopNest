@@ -15,11 +15,13 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
 import logoimg from "../../Images/logo.png";
+import ShopImg from "../../Images/shop.png";
 
 const drawerWidth = 240;
-const navItems = ["Home", "About", "Contact"];
+const navItems = ["Home", "About", "Contact","Categories"];
 
 function DrawerAppBar(props) {
+
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
@@ -45,10 +47,13 @@ function DrawerAppBar(props) {
         alt="Logo"
         style={{ margin: "0 auto" }}
       />
+
       <Divider />
+      
       <List>
         {navItems.map((item) => (
           <ListItem key={item} disablePadding>
+          
             <ListItemButton
               component={Link}
               to={`/${item.toLowerCase()}`}
@@ -111,8 +116,11 @@ function DrawerAppBar(props) {
                 key={item}
                 sx={{
                   color: "#000000",
+                  transition:"transform 0.3s,ease 0.3s",
+
                   "&:hover": {
-                    backgroundColor: "#c3c3c3", // Change to your desired hover color
+                    backgroundColor: "#FFDD10",
+                    transform: "translate(-4px)"
                   },
                 }}
                 component={Link}
@@ -132,6 +140,7 @@ function DrawerAppBar(props) {
               Sign Up
             </Button>
           </Link>
+          
         </Toolbar>
       </AppBar>
       <nav>
