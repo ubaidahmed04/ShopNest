@@ -19,12 +19,12 @@ function ContactSec() {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const formErrors = {};
 
-    if (!data.name) {
+    if (!data.user_name) {
       formErrors.name = 'Name is required';
     }
-    if (!data.email) {
+    if (!data.user_email) {
       formErrors.email = 'Email is required';
-    } else if (!emailRegex.test(data.email)) {
+    } else if (!emailRegex.test(data.user_email)) {
       formErrors.email = 'Email is invalid';
     }
     if (!data.message) {
@@ -57,6 +57,7 @@ function ContactSec() {
             text: 'Sent Successfully',
             icon: 'success',
           });
+          // console.log(data)
           reset(); // Reset the form fields
         },
         (error) => {
@@ -113,7 +114,7 @@ function ContactSec() {
                 variant="standard"
                 className="col-12"
                 name="name"
-                {...register('name', { required: true })}
+                {...register('user_name', { required: true })}
                 error={!!errors.name}
                 helperText={errors.name ? 'Name is required' : ''}
                 sx={{
@@ -136,7 +137,7 @@ function ContactSec() {
                 variant="standard"
                 className="col-12"
                 name="email"
-                {...register('email', {
+                {...register('user_email', {
                   required: true,
                   pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/
                 })}

@@ -88,12 +88,14 @@
   margin: 10px 0;
 }
 .pass a{
-  color: white;
+  color: #c3c3c3;
   text-decoration: none;
+  background-color: #c3c3c3;
   font-family: 'Poppins',sans-serif;
 }
 .pass:hover a{
   text-decoration: underline;
+  cursor: pointer;
 }
 .field input[type="submit"]{
   background: #3498db;
@@ -150,3 +152,5 @@
   cursor: pointer;
   position: absolute;
 }
+
+

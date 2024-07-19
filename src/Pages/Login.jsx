@@ -13,6 +13,7 @@ import {
   signInWithEmailAndPassword,
   GoogleAuthProvider,
   signInWithPopup,
+  sendPasswordResetEmail  ,
   signOut,
 } from "firebase/auth";
 import Swal from "sweetalert2";
@@ -24,7 +25,7 @@ function Login() {
   const auth = getAuth(app);
   const provider = new GoogleAuthProvider();
   const firebaseAuth = getAuth(app);
-
+ 
   const [inputType, setInputType] = useState("password");
 
   const {
@@ -50,7 +51,8 @@ function Login() {
         onAuthStateChanged(auth, (user) => {
           if (user) {
             const uid = user.uid;
-            navigate("/");
+            // navigate("/");
+            console.log(user)
             // ...
           } else {
             // User is signed out
@@ -67,6 +69,27 @@ function Login() {
         });
       });
   };
+  const resetPass = (user)=>{
+    onAuthStateChanged(auth, (user) => {
+      
+      console.log("current user ",user.email)
+      // const user = auth.currentUser;
+      sendPasswordResetEmail(auth, user.email)
+      .then(() => {
+        console.log("reset  email sent")
+        // Password reset email sent!
+        // ..
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // ..
+      });
+      
+    }); // ...
+    
+   
+  }
   const SignWithGoogle = () => {
     signInWithPopup(auth, provider)
       .then((result) => {
@@ -147,7 +170,7 @@ function Login() {
                 SHOW
               </span>
             </div>
-            <div className="pass">
+            <div className="pass" onClick={resetPass}>
               <a>Forgot Password?</a>
             </div>
             <div className="field">

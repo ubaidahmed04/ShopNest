@@ -18,7 +18,7 @@ import logoimg from "../../Images/logo.png";
 import ShopImg from "../../Images/shop.png";
 
 const drawerWidth = 240;
-const navItems = ["Home", "About", "Contact","Categories"];
+const navItems = ["Home", "About", "Contact","Products"];
 
 function DrawerAppBar(props) {
 
