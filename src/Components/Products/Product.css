@@ -36,3 +36,11 @@
     transform: translateY(0);
     }
     } 
+    .title {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        -webkit-line-clamp: 1; /* Change this number to control how many lines to show */
+        max-height: 3.8em; /* Adjust based on line height */
+        line-height: 2.2em; /* Set your desired line height */
+    }

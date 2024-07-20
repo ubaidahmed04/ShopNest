@@ -29,18 +29,18 @@ function DetailSec() {
 
   return (
     <div className="detail-container">
-      <h1>Product Details</h1>
       {details.title ? (
-        <div>
+          <div>
           <div className="carousel-container">
+            <h1 className="text-center">{details.title}</h1>
             <Carousel>
               {details.images && details.images.map((image, index) => (
                 <Carousel.Item key={index} interval={1000}>
                   <Image src={image} className="carousel-image" />
-                  <Carousel.Caption className="carousel-caption">
+                  {/* <Carousel.Caption className="carousel-caption">
                     <h3>{details.title}</h3>
                     <p>{details.brand}</p>
-                  </Carousel.Caption>
+                  </Carousel.Caption> */}
                 </Carousel.Item>
               ))}
             </Carousel>
