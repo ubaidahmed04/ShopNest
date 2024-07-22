@@ -30,8 +30,9 @@ function DetailSec() {
   return (
     <div className="detail-container">
       {details.title ? (
-          <div>
-          <div className="carousel-container">
+        <>
+           {/* <div className='detail-container'>
+           <div className="carousel-container"> */}
             <h1 className="text-center">{details.title}</h1>
             <Carousel>
               {details.images && details.images.map((image, index) => (
@@ -40,12 +41,12 @@ function DetailSec() {
                   {/* <Carousel.Caption className="carousel-caption">
                     <h3>{details.title}</h3>
                     <p>{details.brand}</p>
-                  </Carousel.Caption> */}
+                    </Carousel.Caption> */}
                 </Carousel.Item>
               ))}
             </Carousel>
-          </div>
-          <div>
+          {/* // </div> */}
+          <div className="price-container">
             <Card className="detail-card">
               <CardContent>
                 <Typography variant="h5" component="div">
@@ -57,7 +58,8 @@ function DetailSec() {
               </CardContent>
             </Card>
           </div>
-        </div>
+        {/* // </div> */}
+              </>
       ) : (
         <div style={{ maxWidth: 345, marginTop: 150, marginBottom: 100 }}>
           <CircularProgress color="secondary" />
