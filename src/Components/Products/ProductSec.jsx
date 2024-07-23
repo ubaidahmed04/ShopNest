@@ -1,19 +1,20 @@
 import "./Product.css";
 import * as React from "react";
 import {
-  Button,
-  CardActionArea,
-  CardActions,
   CircularProgress,
   Card,
+  CardActionArea,
+  CardActions,
   CardContent,
   CardMedia,
   Typography,
   Pagination,
+  Button,
 } from "@mui/material";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+
 function ProductSec() {
   const [limits, setLimits] = useState(10);
   const [skip, setSkip] = useState(0);
@@ -40,6 +41,7 @@ function ProductSec() {
     };
     FetchAPI();
   }, [limits, skip]);
+
   const handlePageChange = (event, page) => {
     setCurrentPage(page);
     setSkip((page - 1) * limits);
@@ -47,8 +49,8 @@ function ProductSec() {
 
   return (
     <>
-      <div className="main-product ">
-        <div className="d-flex gap-3 p-3 justify-content-center flex-wrap card-container slideInUp">
+      <div className="main-product">
+        <div style={{  marginTop: 80, marginBottom: 100 }} className="d-flex gap-3 p-3 justify-content-center flex-wrap card-container slideInUp">
           {loader ? (
             <div style={{ maxWidth: 345, marginTop: 150, marginBottom: 100 }}>
               <CircularProgress color="secondary" />
@@ -60,7 +62,6 @@ function ProductSec() {
                 key={item.id}
                 sx={{
                   maxWidth: 345,
-                  marginTop: 10,
                   borderRadius: 5,
                   boxShadow:
                     "7px 0px 15px 0px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1),-5px 7px 15px -3px rgba(0,0,0,0.1)",
@@ -71,14 +72,14 @@ function ProductSec() {
                   <CardMedia
                     component="img"
                     height="auto"
-                    style={{ objectFit: "cover", maxHeight: 260 }}
+                    style={{ objectFit: "cover", maxHeight: 260 ,width:"auto",height:'300'}}
                     image={item.thumbnail}
                     alt={item.title}
                     className=""
                   />
                   <CardContent>
                     <Typography gutterBottom variant="h5" style={{maxHeight:50}}>
-                      <div className="d-flex justify-content-around ">
+                      <div className="d-flex justify-content-around">
                         <div>{item.title}</div>
                         <div>{`Rs.${Math.floor(item.price + 1)}`}</div>
                       </div>
@@ -92,33 +93,22 @@ function ProductSec() {
                     </Typography>
                   </CardContent>
                 </CardActionArea>
-                {/* <CardActions> */}
-                <div className="d-flex justify-content-between mx-4 my-4">
-                  <div>
-                    <Link
-                      to={`/products/${item.id}`}
-                      key={products.id}
-                      style={{ textDecoration: "none" }}
-                    >
-                      <Button variant="outlined" startIcon={<ShoppingCartIcon />}>
-                        Add to Cart
-                      </Button>
-                    </Link>
-                  </div>
-                  <div>
-                    <Link
-                      to={`/products/${item.id}`}
-                      key={products.id}
-                      style={{ textDecoration: "none" }}
-                    >
-                      <Button  variant="outlined">
-                        Details
-                      </Button>
-                    </Link>
-                  </div>
-                </div>
-
-                {/* </CardActions> */}
+                <CardActions className="d-flex justify-content-between mx-4 my-4">
+                  <Link
+                    to={`/products/${item.id}`}
+                    style={{ textDecoration: "none" }}
+                  >
+                    <Button variant="outlined" startIcon={<ShoppingCartIcon />}>
+                      Add to Cart
+                    </Button>
+                  </Link>
+                  <Link
+                    to={`/products/${item.id}`}
+                    style={{ textDecoration: "none" }}
+                  >
+                    <Button variant="outlined">Details</Button>
+                  </Link>
+                </CardActions>
               </Card>
             ))
           )}

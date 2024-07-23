@@ -6,13 +6,7 @@
     padding: 20px;
     margin-top: 80px;
   }
-  
-  .carousel-container {
-    width: 100%;
-    max-width: 600px;
-    margin-bottom: 20px;
-  }
-  
+   
   .carousel-image {
     display: block;
     margin: 0 auto;
@@ -21,6 +15,12 @@
     object-fit: contain;
   }
   
+  .main-container{
+    margin-top: 20px;
+  }
+  .price{
+    margin-top: 20px;
+  }
   .carousel-caption h3, .carousel-caption p {
     color: black !important;
   }
