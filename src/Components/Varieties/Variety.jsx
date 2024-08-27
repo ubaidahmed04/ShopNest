@@ -23,6 +23,13 @@ function Variety() {
         </div>
         <div className="col-12 col-md-6 d-flex flex-wrap">
           <div className="position-relative col-6 col-md-6 ">
+          <LazyLoadImage
+          src={HeadPhone}
+          className="w-100 variety-img" 
+          alt="Hero Image"
+          effect="blur" 
+          // height={500}
+        />
             <img src={HeadPhone} className="w-100 variety-img" alt="" />
             <div className="text-overlay">
               <div>HeadPhones</div>

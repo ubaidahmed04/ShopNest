@@ -1,30 +1,38 @@
+/* Global styles */
+body {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+
 .img-div {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .app-img {
   width: 700px;
   padding: 20px;
   border-radius: 50px;
 }
+
 .upper-container {
-  width: 100wh;
-  height: 400px;
+  width: 100%;
+  height: auto;
   background-color: #ebd96b;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .upper-contain {
   padding: 80px;
-  /* height: auto; */
   text-align: center;
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
 }
+
 .footer-input {
   min-width: 200px;
   max-width: 350px;
@@ -35,13 +43,15 @@
   font-weight: 900;
   color: #ffffff;
 }
+
 .text-sm {
   font-size: 18px;
   font-weight: 500;
   color: #ffffff;
 }
+
 .lower-footer {
-  width: 100wh;
+  width: 100%;
   height: auto;
   background-color: #1C2541;
   display: flex;
@@ -49,31 +59,33 @@
   justify-content: space-between;
   font-family: "Open Sans", sans-serif;
 }
+
 .icon-div {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   gap: 20px;
   padding-top: 20px;
 }
+
 .main-icon .icon-div span {
   margin-right: 15px;
   font-size: 20px;
-  cursor: pointer; /* Change cursor to pointer */
-  transition: color 0.3s, transform 0.3s; /* Smooth hover transition */
+  cursor: pointer;
+  transition: color 0.3s, transform 0.3s;
 }
 
 .main-icon .icon-div span:hover {
-  color: #FFFFFF; 
+  color: #FFFFFF;
   transform: scale(1.1);
   box-shadow: 0 0 10px 2px rgba(0, 123, 255, 0.5);
   border-radius: 30%;
 }
-.footer-right-contain li:hover {
-    color: #ffdd10;
-  cursor: pointer;
 
-  }
-  
+.footer-right-contain li:hover {
+  color: #ffdd10;
+  cursor: pointer;
+}
+
 .icon-div > span > i {
   background-color: #ffdd10;
   width: 40px;
@@ -84,76 +96,101 @@
   display: flex;
   border-radius: 30%;
 }
+
 .footer-right-contain {
   list-style-type: none;
   align-items: flex-start;
   padding-top: 45px;
   line-height: 40px;
   display: flex;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
-@media only screen and (max-width: 500px) {
+
+@media only screen and (max-width: 900px) {
   .app-img {
     width: 400px;
     padding: 20px;
     border-radius: 40px;
   }
+
   .upper-contain {
-    padding: 0px;
+    padding: 40px;
   }
+
   .upper-text {
-    font-size: 25px;
-    text-align: center;
-    font-weight: 900;
-    color: #ffffff;
+    font-size: 30px;
   }
+
   .text-sm {
-    font-size: 15px;
-    font-weight: 500;
-    color: #ffffff;
+    font-size: 16px;
   }
+
   .footer-right-contain {
-    list-style-type: none;
+    flex-direction: column;
     align-items: flex-start;
-    padding-top: 60px;
-    line-height: 30px;
-    display: flex;
   }
-  .upper-text {
-    font-size: 25px;
-    font-weight: 900;
-    color: #ffffff;
-  }
+
   .icon-div > span > i {
     background-color: #ebd96b;
     width: 30px;
     height: 30px;
-    align-items: center;
     font-size: 15px;
-    justify-content: center;
-    display: flex;
-    border-radius: 30%;
   }
-  .icon-div {
-    display: flex;
-    justify-content: flex-start;
-    gap: 15px;
-    padding-top: 20px;
-  }
+
   .lower-footer {
-    width: 100wh;
-    height: auto;
-    background-color: #000000;
-    display: flex;
-    /* justify-content: space-between; */
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     text-align: center;
   }
+
   .main-icon {
-    display: flex;
-    justify-content: center;
+    margin-top: 20px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .app-img {
+    width: 300px;
+    padding: 10px;
+    border-radius: 30px;
+  }
+
+  .upper-contain {
+    padding: 20px;
+  }
+
+  .upper-text {
+    font-size: 25px;
+  }
+
+  .text-sm {
+    font-size: 14px;
+  }
+
+  .footer-input {
+    min-width: 150px;
+    max-width: 300px;
+  }
+
+  .icon-div {
+    gap: 10px;
+  }
+
+  .icon-div > span > i {
+    width: 25px;
+    height: 25px;
+    font-size: 12px;
+  }
+
+  .lower-footer {
+    padding: 20px;
+    flex-direction: column;
     align-items: center;
+    text-align: center;
+  }
+
+  .footer-right-contain {
+    flex-direction: column;
+    align-items: center;
+    line-height: 25px;
   }
 }

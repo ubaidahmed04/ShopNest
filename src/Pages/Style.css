@@ -7,7 +7,6 @@
 }
 .bg-img{
   background: url('../Images/bg.png');
-  background: url('../Images/bg.png');
   height: 100vh;
   background-size: contain;
   object-fit: cover;

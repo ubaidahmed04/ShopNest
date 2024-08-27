@@ -105,7 +105,8 @@ function DrawerAppBar(props) {
                 src={logoimg}
                 width={"70px"}
                 alt="Logo"
-                style={{ margin: "0 auto", cursor: "pointer" }}
+                // remove margin auto for logo 
+                style={{ cursor: "pointer" }}
               />
             </Link>
           </Typography>

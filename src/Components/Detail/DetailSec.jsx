@@ -7,6 +7,9 @@ import {
   CircularProgress,
   Rating,
 } from "@mui/material";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css'; 
+
 import Carousel from "react-bootstrap/Carousel";
 import { Image } from "react-bootstrap";
 import { useParams } from "react-router-dom";
@@ -44,9 +47,17 @@ function DetailSec() {
                 <Carousel.Item
                   key={index}
                   interval={1000}
-                  style={{ background: "#f4f6f5" }}
+                  className="d-flex justify-content-center"
+                  style={{ background: "#f4f6f5", }}
                 >
-                  <Image src={image} className="carousel-image" width={300} />
+                  <LazyLoadImage
+                    src={image}
+                    alt="Description"
+                    className="carousel-image"
+                    width={300}
+                    height={300} 
+                    effect="blur"
+                  />
                 </Carousel.Item>
               ))}
           </Carousel>
@@ -69,10 +80,10 @@ function DetailSec() {
                   </div>
                   <div className="d-flex justify-content-between mx-3 my-1" >
                     <div className="text-center">Location <span> <LocationOnOutlinedIcon /></span></div>
-                    <div>Karachi</div>
+                    <div className="">Karachi</div>
 
                   </div>
-                  
+
                 </CardContent>
               </Card>
             </div>

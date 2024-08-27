@@ -34,10 +34,12 @@
     padding: 10px;
     margin: 30px auto;
     display: flex;
+    /* justify-content: center;
+    align-items: center; */
     flex-wrap: wrap;
     margin-top: 110px;
     box-sizing: border-box;
-    overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-x: hidden; 
 }
 
 .hero-img {
@@ -46,7 +48,8 @@
 
 .left-hero {
     flex: 1;
-    max-width: 35%;
+    /* remove left section width  */
+    max-width: 100%;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;

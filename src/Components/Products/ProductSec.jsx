@@ -6,7 +6,6 @@ import {
   CardActionArea,
   CardActions,
   CardContent,
-  CardMedia,
   Typography,
   Pagination,
   Button,
@@ -14,6 +13,8 @@ import {
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css'; // Optional for a blur effect
 
 function ProductSec() {
   const [limits, setLimits] = useState(10);
@@ -50,7 +51,7 @@ function ProductSec() {
   return (
     <>
       <div className="main-product">
-        <div style={{  marginTop: 80, marginBottom: 100 }} className="d-flex gap-3 p-3 justify-content-center flex-wrap card-container slideInUp">
+        <div style={{ marginTop: 80, marginBottom: 100 }} className="d-flex gap-3 p-3 justify-content-center flex-wrap card-container slideInUp">
           {loader ? (
             <div style={{ maxWidth: 345, marginTop: 150, marginBottom: 100 }}>
               <CircularProgress color="secondary" />
@@ -69,16 +70,16 @@ function ProductSec() {
                 className="card"
               >
                 <CardActionArea>
-                  <CardMedia
-                    component="img"
-                    height="auto"
-                    style={{ objectFit: "cover", maxHeight: 260 ,width:"auto",height:'300'}}
-                    image={item.thumbnail}
+                  <LazyLoadImage
                     alt={item.title}
-                    className=""
+                    height="300px"
+                    effect="blur" // Optional: add a blur effect or other effects
+                    src={item.thumbnail}
+                    style={{ objectFit: "cover", width: "auto", height: '300px' }}
+                    width="auto"
                   />
                   <CardContent>
-                    <Typography gutterBottom variant="h5" style={{maxHeight:50}}>
+                    <Typography gutterBottom variant="h5" style={{ maxHeight: 50 }}>
                       <div className="d-flex justify-content-around">
                         <div>{item.title}</div>
                         <div>{`Rs.${Math.floor(item.price + 1)}`}</div>
