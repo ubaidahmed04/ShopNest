@@ -4,10 +4,13 @@ import LowerFooter from '../Components/Footer/LowerFooter'
 import ContactSec from '../Components/Contact/ContactSec'
 function Contact() {
   return (
-    <div>
+    <div className=''>
          <Head/>
         <ContactSec/>
+        
+    <span className='mt-80'>
         <LowerFooter/>
+    </span>
     </div>
   )
 }

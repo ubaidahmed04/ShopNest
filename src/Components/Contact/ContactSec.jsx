@@ -1,77 +1,32 @@
 import React, { useRef } from "react";
 import { Button, TextField } from "@mui/material";
-import "./Contact.css";
 import { Form } from "react-bootstrap";
 import emailjs from '@emailjs/browser';
 import Swal from "sweetalert2";
 import { useForm } from "react-hook-form";
+import "./Contact.css";
 
 function ContactSec() {
   const form = useRef();
-  const {
-    register,
-    handleSubmit,
-    reset,
-    formState: { errors },
-  } = useForm();
-
-  const validateForm = (data) => {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const formErrors = {};
-
-    if (!data.user_name) {
-      formErrors.name = 'Name is required';
-    }
-    if (!data.user_email) {
-      formErrors.email = 'Email is required';
-    } else if (!emailRegex.test(data.user_email)) {
-      formErrors.email = 'Email is invalid';
-    }
-    if (!data.message) {
-      formErrors.message = 'Message is required';
-    }
-
-    if (Object.keys(formErrors).length > 0) {
-      Swal.fire({
-        icon: 'error',
-        title: 'Validation Error',
-        text: 'Please fill in all required fields correctly.',
-      });
-      return false;
-    }
-
-    return true;
-  };
+  const { register, handleSubmit, reset, formState: { errors } } = useForm();
 
   const onSubmit = (data) => {
-    if (!validateForm(data)) {
-      return;
-    }
-
-    emailjs
-      .sendForm('service_mj7izqf', 'template_dhvgjyn', form.current, 'BGeB65cbgpJqCoxYb')
+    // mene emailjs ek hi template or service use ki he portfolio or shopnest website ke lye 
+    emailjs.sendForm('service_dttlny9', 'template_akza2cj', form.current, 'xZzt_m_2tW7AHgdJu')
       .then(
         () => {
-          Swal.fire({
-            title: 'Good job!',
-            text: 'Sent Successfully',
-            icon: 'success',
-          });
-          // console.log(data)
-          reset(); // Reset the form fields
+          Swal.fire({ title: 'Good job!', text: 'Sent Successfully', icon: 'success' });
+          reset();
         },
         (error) => {
-          Swal.fire({
-            icon: 'error',
-            title: 'Something went wrong',
-            text: 'Failed to send the message. Please try again.',
-          });
+          Swal.fire({ icon: 'error', title: 'Something went wrong', text: 'Failed to send the message. Please try again.' });
+          console.error("Email send error:", error);
         }
       );
   };
 
   return (
-    <div className="main py-3">
+    <div className="main py-3 mb-4 xl:mb-60">
       <div className="contact-main">
         <b className="contact-heading text-center">Get in Touch</b>
         <span className="ask text-center">Ask Any Question Or Remarks? Just write a Message!</span>
@@ -107,128 +62,55 @@ function ContactSec() {
         </div>
         <div className="d-flex col-12 col-lg-6 col-md-6 flex-column text-field p-sm-3  ml-lg-5">
           <Form ref={form} onSubmit={handleSubmit(onSubmit)} className="d-flex flex-column gap-4">
-            <div className="d-flex">
-              <TextField
-                id="filled-basic"
-                label="Your Name"
-                variant="standard"
-                className="col-12"
-                name="name"
-                {...register('user_name', { required: true })}
-                error={!!errors.name}
-                helperText={errors.name ? 'Name is required' : ''}
-                sx={{
-                  '& .MuiInput-underline:before': {
-                    borderBottomColor: '#FFDD10', // normal state
-                  },
-                  '& .MuiInput-underline:after': {
-                    borderBottomColor: '#FFDD10', // focused state
-                  },
-                  '& .Mui-focused .MuiInputLabel-root': {
-                    color: '#FFDD10', // focused label color
-                  },
-                }}
-              />
-            </div>
-            <div className="d-flex">
-              <TextField
-                id="filled-basic"
-                label="Email"
-                variant="standard"
-                className="col-12"
-                name="email"
-                {...register('user_email', {
-                  required: true,
-                  pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-                })}
-                error={!!errors.email}
-                helperText={errors.email ? 'Email is invalid' : ''}
-                sx={{
-                  '& .MuiInput-underline:before': {
-                    borderBottomColor: '#FFDD10', // normal state
-                  },
-                  '& .MuiInput-underline:after': {
-                    borderBottomColor: '#FFDD10', // focused state
-                  },
-                  '& .Mui-focused .MuiInputLabel-root': {
-                    color: '#FFDD10', // focused label color
-                  },
-                }}
-              />
-            </div>
-            <div className="d-flex flex-grow-1">
-              <TextField
-                id="filled-basic"
-                className="col-12"
-                label="Subject"
-                variant="standard"
-                name="subject"
-                {...register('subject', { required: true })}
-                error={!!errors.message}
-                helperText={errors.message ? 'Subject is required' : ''}
-                sx={{
-                  '& .MuiInput-underline:before': {
-                    borderBottomColor: '#FFDD10', 
-                  },
-                  '& .MuiInput-underline:after': {
-                    borderBottomColor: '#FFDD10', 
-                  },
-                  '& .Mui-focused .MuiInputLabel-root': {
-                    color: '#FFDD10', 
-                  },
-                }}
-              />
-            </div>
-            <div className="d-flex">
-              <TextField
-                id="filled-multiline-static"
-                label="Message"
-                multiline
-                rows={3}
-                variant="standard"
-                placeholder="Compose your message here"
-                className="col-12"
-                name="message"
-                {...register('message', { required: true })}
-                error={!!errors.message}
-                helperText={errors.message ? 'Message is required' : ''}
-                sx={{
-                  '& .MuiInput-underline:before': {
-                    borderBottomColor: '#FFDD10', 
-                  },
-                  '& .MuiInput-underline:after': {
-                    borderBottomColor: '#FFDD10', 
-                  },
-                  '& .Mui-focused .MuiInputLabel-root': {
-                    color: '#FFDD10', 
-                  },
-                  '& .Mui-focused .MuiInputLabel-root:hover': {
-                    color: '#FFDD10', 
-                  }
-                }}
-              />
-            </div>
-            <div>
-              <Button
-                variant="contained"
-                type="submit"
-                className="col-12"
-                sx={{
-                  background: "#FFDD10",
-                  border: "none",
-                  borderRadius: "5px",
-                  flexGrow: 1,
-                  color: "#FFFFFF",
-                  fontWeight: "bold",
-                  "&:hover": {
-                    backgroundColor: "#FFDD10",
-                    transform: "translateY(-5px)"
-                  },
-                }}
-              >
-                Submit
-              </Button>
-            </div>
+            <TextField
+              label="Your Name"
+              variant="standard"
+              className="col-12"
+              name="name"
+              {...register('from_name', { required: 'Name is required' })}
+              error={!!errors.from_name}
+              helperText={errors.from_name?.message}
+              sx={inputStyles}
+            />
+            <TextField
+              label="Email"
+              variant="standard"
+              className="col-12"
+              name="email"
+              {...register('from_email', {
+                required: 'Email is required',
+                pattern: { value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, message: 'Email is invalid' }
+              })}
+              error={!!errors.from_email}
+              helperText={errors.from_email?.message}
+              sx={inputStyles}
+            />
+            <TextField
+              label="Subject"
+              variant="standard"
+              className="col-12"
+              name="subject"
+              {...register('subject', { required: 'Subject is required' })}
+              error={!!errors.subject}
+              helperText={errors.subject?.message}
+              sx={inputStyles}
+            />
+            <TextField
+              label="Message"
+              multiline
+              rows={3}
+              variant="standard"
+              placeholder="Compose your message here"
+              className="col-12"
+              name="message"
+              {...register('message', { required: 'Message is required' })}
+              error={!!errors.message}
+              helperText={errors.message?.message}
+              sx={inputStyles}
+            />
+            <Button variant="contained" type="submit" className="col-12" sx={buttonStyles}>
+              Submit
+            </Button>
           </Form>
         </div>
       </div>
@@ -236,5 +118,19 @@ function ContactSec() {
   );
 }
 
+const inputStyles = {
+  '& .MuiInput-underline:before': { borderBottomColor: '#FFDD10' },
+  '& .MuiInput-underline:after': { borderBottomColor: '#FFDD10' },
+  '& .Mui-focused .MuiInputLabel-root': { color: '#FFDD10' },
+};
+
+const buttonStyles = {
+  background: "#FFDD10",
+  border: "none",
+  borderRadius: "5px",
+  color: "#FFFFFF",
+  fontWeight: "bold",
+  "&:hover": { backgroundColor: "#FFDD10", transform: "translateY(-5px)" },
+};
+
 export default ContactSec;
-        

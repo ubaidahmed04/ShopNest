@@ -5,11 +5,11 @@ import { Button } from 'react-bootstrap';
 
 function UpperFooter() {
   return (
-    <div>
-      <div className='img-div'>
+    <div className=''>
+      <div className='img-div '>
         <img src={appImg} className='app-img img-fluid' alt="" />
       </div>
-      <div className='upper-container'>
+      <div className='upper-container '>
         <div className='upper-contain'>
           <span className='upper-text'>JOIN SHOPPING COMMUNITY TO GET MONTHLY PROMO</span>
           <br />

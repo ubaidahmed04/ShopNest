@@ -3,7 +3,7 @@ import React from 'react';
 function LowerFooter() {
   return (
     <div>
-      <div className='lower-footer'>
+      <div className='lower-footer '>
         <div className='pt-5 '>
           <span className='upper-text'>FOOTER</span>
           <div className='pt-4'>
