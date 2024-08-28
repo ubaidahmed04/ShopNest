@@ -26,13 +26,13 @@ function ContactSec() {
 
   return (
     <>
-      <div className="main flex items-center w-full justify-center  h-screen ">
-        <div className="flex flex-col w-full" >
+      <div className="main flex items-center w-full justify-center  min-h-screen ">
+        <div className="flex flex-col w-full py-5" >
           <div className="contact-main">
             <b className="contact-heading text-center">Get in Touch</b>
             <span className="ask text-center">Ask Any Question Or Remarks? Just write a Message!</span>
           </div>
-          <div className="content-main flex w-3/5  justify-center  bg-white rounded-3xl p-3 mx-auto">
+          <div className="content-main flex w-4/5  justify-center  bg-white rounded-3xl p-3 mx-auto">
             <div className="contact-links text-white p-4 rounded-xl bg-[#1C2541] flex flex-col gap-3 md:w-1/2">
               <div className="flex flex-col">
                 <span className="text-2xl font-bold">Contact Information</span>
@@ -62,8 +62,8 @@ function ContactSec() {
                 </div>
               </div>
             </div>
-            <div className="flex flex-col gap-4 p-4 md:w-1/2">
-              <form ref={form} onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4">
+            <div className="flex flex-col gap-4 p-4  w-full lg:w-1/2">
+              <form ref={form} onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4 w-full">
                 <TextField
                   label="Your Name"
                   variant="standard"
