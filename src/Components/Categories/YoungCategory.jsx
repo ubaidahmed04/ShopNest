@@ -15,20 +15,20 @@ function YoungCategory() {
       </div>
       <div className="heading position-relative">Young&#39;s Favourite</div>
       <div className="row card-body ">
-        <div className="col-6 col-md-6 col-sm-12 my-3  young-Card ">
-          <Card className="card-box">
+      <div className="col-6 col-md-6 col-sm-12 my-3  young-Card ">
+          <Card className="rounded-md shadow-lg w-full">
             <LazyLoadImage
               variant="top"
-              className="young-img1 img-fluid"
-              effect="blur"
+              className="young-img "
               src={GirlImg1}
+              effect="blur"
             />
             <Card.Body>
-              <span className='flex items-center justify-between '>
-                <span className='title'>
+              <span className='flex items-center px-4 justify-between '>
+              <span className='title'>
                   Hoodies & Sweetshirt
                 </span>
-                <span className='explore ml-8'>
+                <span className='explore ml-8 flex w-full'>
                   Explore Now! <span> <i className="fa-solid fa-arrow-right fa-xl ml-2"></i></span>
                 </span>
               </span>
@@ -36,19 +36,19 @@ function YoungCategory() {
           </Card>
         </div>
         <div className="col-6 col-md-6 col-sm-12 my-3  young-Card">
-          <Card className="card-box">
+          <Card className="rounded-md shadow-lg w-full">
             <LazyLoadImage
               variant="top"
-              className="young-img img-fluid"
+              className="young-img "
               src={category1}
               effect="blur"
             />
             <Card.Body>
-              <span className='flex items-center justify-between '>
-                <span className='title'>
+              <span className='flex items-center px-4 justify-between '>
+              <span className='title'>
                   Hoodies & Sweetshirt
                 </span>
-                <span className='explore ml-8'>
+                <span className='explore ml-8 flex w-full'>
                   Explore Now! <span> <i className="fa-solid fa-arrow-right fa-xl ml-2"></i></span>
                 </span>
               </span>

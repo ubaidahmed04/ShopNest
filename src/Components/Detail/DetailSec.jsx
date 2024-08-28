@@ -1,23 +1,14 @@
-import "./Detail.css";
 import React, { useEffect, useState } from "react";
-import {
-  Card,
-  CardContent,
-  Typography,
-  CircularProgress,
-  Rating,
-} from "@mui/material";
+import { Card, CardContent, Typography, CircularProgress, Rating } from "@mui/material";
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css'; 
-
-import Carousel from "react-bootstrap/Carousel";
-import { Image } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
+import { Carousel } from 'react-responsive-carousel';
+
 function DetailSec() {
   const [details, setDetails] = useState({});
   const { id } = useParams();
-  console.log(id);
   const API = `https://dummyjson.com/products/${id}`;
 
   useEffect(() => {
@@ -25,7 +16,6 @@ function DetailSec() {
       try {
         const res = await fetch(API);
         const data = await res.json();
-        console.log(data);
         setDetails(data);
       } catch (err) {
         console.log("err--->", err);
@@ -37,95 +27,86 @@ function DetailSec() {
   }, [id]);
 
   return (
-    <div className="detail-container">
+    <div className="mt-[50px] px-6 py-12">
       {details.title ? (
         <>
-          <h1 className="text-center">{details.title}</h1>
-          <Carousel>
-            {details.images &&
-              details.images.map((image, index) => (
-                <Carousel.Item
-                  key={index}
-                  interval={1000}
-                  className="d-flex justify-content-center"
-                  style={{ background: "#f4f6f5", }}
-                >
-                  <LazyLoadImage
-                    src={image}
-                    alt="Description"
-                    className="carousel-image"
-                    width={300}
-                    height={300} 
-                    effect="blur"
-                  />
-                </Carousel.Item>
-              ))}
-          </Carousel>
-          <div className="main-container">
-            <div className="price">
-              <Card elevation={3}>
-                <CardContent>
-                  <div className="d-flex justify-content-between">
-                    <div>
-                      <span className="fs-4  bold-text">{details.title}</span>
-                    </div>
-                    <div>
-                      <span className="fs-4  bold-text">$ {details.price}</span>
-                    </div>
+          <h1 className="text-center text-3xl font-bold mb-8">{details.title}</h1>
+          <div className="carousel-container mb-8">
+            <Carousel
+              showArrows={true}
+              showThumbs={false}
+              infiniteLoop
+              autoPlay
+              emulateTouch
+              className="carousel-wrapper"
+            >
+              {details.images &&
+                details.images.map((image, index) => (
+                  <div key={index} className="carousel-slide">
+                    <LazyLoadImage
+                      src={image}
+                      alt="Description"
+                      className="carousel-image"
+                      width={300}
+                      height={300} 
+                      effect="blur"
+                    />
                   </div>
-                  <div>
-                    <span className="fs-6 text-secondary">
-                      {details.description}
-                    </span>
-                  </div>
-                  <div className="d-flex justify-content-between mx-3 my-1" >
-                    <div className="text-center">Location <span> <LocationOnOutlinedIcon /></span></div>
-                    <div className="">Karachi</div>
-
-                  </div>
-
-                </CardContent>
-              </Card>
-            </div>
-            <div className="price">
-              <Card elevation={3}>
-                <CardContent>
-                  <Typography variant="h5" component="div">
-                    {details.title}
-                  </Typography>
-                  <Typography variant="h5" component="div">
-                    <span className="fs-5 fw-bolder">Price :</span>
-                    {details.price}
-                  </Typography>
-                  <Typography variant="h6" component="div">
-                    <span className="fs-5 fw-bolder">Brand :</span>
-                    {details.brand}
-                  </Typography>
-                  <Typography variant="h6" component="div">
-                    <span className="fs-5 fw-bolder">Stocks :</span>
-                    {details.stock}
-                  </Typography>
-
-                  <Typography variant="body2" color="text.secondary">
-                    <Rating name="half-rating" defaultValue={details.rating} />
-                  </Typography>
-                </CardContent>
-              </Card>
-            </div>
-            <div></div>
+                ))}
+            </Carousel>
           </div>
+          <div className="main-container px-4 py-8 md:px-8 md:py-12">
+      <div className="price mb-8">
+        <Card elevation={3} className="shadow-lg rounded-lg overflow-hidden">
+          <CardContent>
+            <div className="flex justify-between mb-6">
+              <div>
+                <span className="text-2xl font-semibold text-gray-800">{details.title}</span>
+              </div>
+              <div>
+                <span className="text-2xl font-semibold text-gray-800">${details.price}</span>
+              </div>
+            </div>
+            <div className="mb-6">
+              <span className="text-gray-700 text-base">
+                {details.description}
+              </span>
+            </div>
+            <div className="flex items-center">
+              <div className="flex items-center text-gray-600">
+                Location
+                <LocationOnOutlinedIcon className="ml-2 text-blue-600" />
+              </div>
+              <div className="ml-4 text-gray-800">Karachi</div>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+      <div className="price mb-8">
+        <Card elevation={3} className="shadow-lg rounded-lg overflow-hidden">
+          <CardContent>
+            <Typography variant="h5" component="div" className="text-gray-800 font-semibold mb-2">
+              {details.title}
+            </Typography>
+            <Typography variant="h6" component="div" className="text-gray-700 mb-2">
+              <span className="font-medium">Price :</span> ${details.price}
+            </Typography>
+            <Typography variant="h6" component="div" className="text-gray-700 mb-2">
+              <span className="font-medium">Brand :</span> {details.brand}
+            </Typography>
+            <Typography variant="h6" component="div" className="text-gray-700 mb-2">
+              <span className="font-medium">Stocks :</span> {details.stock}
+            </Typography>
+            <Typography variant="body2" color="text.secondary" className="mt-2">
+              <Rating name="half-rating" defaultValue={details.rating} />
+            </Typography>
+          </CardContent>
+        </Card>
+      </div>
+    </div>
         </>
       ) : (
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignSelf: "center",
-            maxWidth: 345,
-            marginTop: 150,
-            marginBottom: 100,
-          }}
-        >
+        <div className="flex justify-center items-center h-64">
           <CircularProgress color="secondary" />
         </div>
       )}

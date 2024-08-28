@@ -5,16 +5,16 @@
   box-sizing: border-box;
   user-select: none;
 }
-.bg-img{
-  background: url('../Images/bg.png');
-  height: 100vh;
-  background-size: contain;
-  object-fit: cover;
-  background-position: center;
-  /* position: relative; */
-  /* width: fit-content; */
-  /* display: inline-block; */
-
+.bg-img {
+  background: url('../Images/bg.png') no-repeat center center;
+  background-size: cover; 
+  height: 100vh; 
+  width: 100vw; 
+  overflow: hidden; 
+  position: absolute; 
+  top: 0;
+  left: 0;
+  z-index: -1; 
 }
 .bg-img:after{
   position: relative;
@@ -36,6 +36,7 @@
   transform: translate(-50%,-50%);
   background: rgba(255,255,255,0.04);
   box-shadow: -1px 4px 28px 0px rgba(0,0,0,0.75);
+  opacity: .9;
 }
 .content header{
   color: white;
@@ -89,7 +90,6 @@
 .pass a{
   color: #c3c3c3;
   text-decoration: none;
-  background-color: #c3c3c3;
   font-family: 'Poppins',sans-serif;
 }
 .pass:hover a{

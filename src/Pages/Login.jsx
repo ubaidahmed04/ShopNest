@@ -1,206 +1,152 @@
 import React, { useState } from "react";
-import { Form } from "react-bootstrap";
-import { Link } from "react-router-dom";
-import { Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import { createContext, useContext } from "react";
 import googleIcon from "../Images/google.png";
-
-import "./Style.css";
 import {
   getAuth,
   onAuthStateChanged,
   signInWithEmailAndPassword,
   GoogleAuthProvider,
   signInWithPopup,
-  sendPasswordResetEmail  ,
+  sendPasswordResetEmail,
   signOut,
 } from "firebase/auth";
 import Swal from "sweetalert2";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import app from "../Firebase/Firebase";
+import "./Style.css";
 
 function Login() {
   const navigate = useNavigate();
   const auth = getAuth(app);
   const provider = new GoogleAuthProvider();
-  const firebaseAuth = getAuth(app);
- 
   const [inputType, setInputType] = useState("password");
 
   const {
     register,
     handleSubmit,
-    watch,
     reset,
     formState: { errors },
   } = useForm();
+
   const onSubmit = (data) => {
-    console.log(data);
     signInWithEmailAndPassword(auth, data.email, data.password)
       .then((userCredential) => {
-        // Signed in
         const user = userCredential.user;
         Swal.fire({
           title: "Good job!",
-          text: "Sign up Successfully",
+          text: "Sign in Successfully",
           icon: "success",
         });
-
         reset();
         onAuthStateChanged(auth, (user) => {
           if (user) {
-            const uid = user.uid;
-            // navigate("/");
-            console.log(user)
-            // ...
-          } else {
-            // User is signed out
+            navigate("/");
           }
-        }); // ...
+        });
       })
       .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
         Swal.fire({
           icon: "error",
-          title: errorCode,
-          text: errorMessage,
+          title: error.code,
+          text: error.message,
         });
       });
   };
-  const resetPass = (user)=>{
+
+  const resetPass = () => {
     onAuthStateChanged(auth, (user) => {
-      
-      console.log("current user ",user.email)
-      // const user = auth.currentUser;
-      sendPasswordResetEmail(auth, user.email)
-      .then(() => {
-        console.log("reset  email sent")
-        // Password reset email sent!
-        // ..
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        // ..
-      });
-      
-    }); // ...
-    
-   
-  }
+      if (user) {
+        sendPasswordResetEmail(auth, user.email).catch((error) => {
+          Swal.fire({
+            icon: "error",
+            title: error.code,
+            text: error.message,
+          });
+        });
+      }
+    });
+  };
+
   const SignWithGoogle = () => {
     signInWithPopup(auth, provider)
       .then((result) => {
-        const credential = GoogleAuthProvider.credentialFromResult(result);
-        const token = credential.accessToken;
-        const user = result.user;
-        console.log(user);
         onAuthStateChanged(auth, (user) => {
           if (user) {
-            const uid = user.uid;
-
             navigate("/");
-            // ...
-          } else {
-            // User is signed out
           }
         });
       })
       .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        const email = error.customData?.email;
-      });
-  };
-  const logOut = () => {
-    signOut(auth)
-      .then(() => {
-        navigate("register");
         Swal.fire({
-          title: "Good Job!",
-          text: "Log Out ",
-          icon: "success",
+          icon: "error",
+          title: error.code,
+          text: error.message,
         });
-      })
-      .catch((error) => {
-        console.log(error);
       });
   };
-  // console.log(onSubmit);
+
   return (
-    <div>
-      <div className="bg-img">
-        <div>
+    <div className="bg-img max-h-screen max-w-screen">
+      <div>
         <span>
-      <Link to={'/'}>
-    <i className="fa-solid arrow-icon fa-3x fa-arrow-left"></i>
-      </Link>
-      </span>
+          <Link to="/">
+            <i className="fa-solid arrow-icon fa-3x fa-arrow-left"></i>
+          </Link>
+        </span>
+      </div>
+      <div className="content">
+        <header className="text-white text-2xl font-semibold">Login Form</header>
+        <form onSubmit={handleSubmit(onSubmit)} className="mt-6">
+          <div className="field">
+            <span className="fa fa-user" />
+            <input
+              type="email"
+              className="w-full p-2 border rounded"
+              {...register("email")}
+              placeholder="Email or Phone"
+            />
+          </div>
+          <div className="field space mt-4">
+            <span className="fa fa-lock" />
+            <input
+              type={inputType}
+              className="w-full p-2 border rounded"
+              {...register("password")}
+              placeholder="Password"
+            />
+            <span
+              className="show absolute right-4 top-3 cursor-pointer"
+              onClick={() => setInputType(inputType === "text" ? "password" : "text")}
+            >
+              SHOW
+            </span>
+          </div>
+          <div className="pass mt-2">
+            <a className=" cursor-pointer" onClick={resetPass}>
+              Forgot Password?
+            </a>
+          </div>
+          <div className="field mt-6">
+            <input
+              type="submit"
+              className="w-full bg-blue-600 text-white p-2 rounded cursor-pointer"
+              value="LOGIN"
+            />
+          </div>
+        </form>
+        <div className="login text-white mt-4">Or login with</div>
+        <div className="mt-4">
+          <button
+            className="google-btn w-full bg-gray-100 text-gray-900 p-2 rounded flex items-center justify-center"
+            onClick={SignWithGoogle}
+          >
+            <i className="fa-brands fa-google mr-2"></i>
+            Continue with Google
+          </button>
         </div>
-        <div className="content">
-       
-          <header>Login Form</header>
-          <Form onSubmit={handleSubmit(onSubmit)}>
-            <div className="field">
-              <span className="fa fa-user" />
-              <input
-                type="email"
-                required=""
-                {...register("email")}
-                placeholder="Email or Phone"
-              />
-            </div>
-            <div className="field space">
-              <span className="fa fa-lock" />
-              <input
-                type={inputType}
-                className="pass-key"
-                required=""
-                {...register("password")}
-                placeholder="Password"
-              />
-              <span
-                className="show"
-                onClick={() => {
-                  setInputType(inputType === "text" ? "password" : "text");
-                }}
-              >
-                SHOW
-              </span>
-            </div>
-            <div className="pass" onClick={resetPass}>
-              <a>Forgot Password?</a>
-            </div>
-            <div className="field">
-              <input type="submit" defaultValue="LOGIN" />
-            </div>
-          </Form>
-          <div className="login">Or login with</div>
-
-          <div className=" ">
-            <div>
-              <Button
-                className=" google-btn"
-                 onClick={SignWithGoogle}
-              >
-                <i class="fa-brands fa-google"></i>
-                Continue with Google
-              </Button>
-
-              {/* <Button
-                variant="danger"
-                onClick={() => {logOut}}
-              >
-                LogOut
-              </Button> */}
-            </div>
-          </div>
-          <div className="signup">
-            Don't have account?
-            <Link to={"/register"}>Signup </Link>
-          </div>
+        <div className="signup mt-4 text-white">
+          Don't have an account?{" "}
+          <Link to="/register" className="text-blue-400">Signup</Link>
         </div>
       </div>
     </div>

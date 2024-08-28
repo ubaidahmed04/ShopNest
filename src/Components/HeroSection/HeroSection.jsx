@@ -16,14 +16,17 @@ function HeroSection() {
         <div className="text pb-4">
           Live for Influential and Innovative fashion!
         </div>
-        <Button variant="dark">SHOP NOW</Button>
+        <button className="bg-gray-800 text-white font-bold py-2 px-4 rounded hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500">
+          SHOP NOW
+        </button>
+
       </div>
       <div className="hero-img">
         <LazyLoadImage
           src={img1}
           // className="hero-img"
           alt="Hero Image"
-          effect="blur" 
+          effect="blur"
           height={500}
         />
       </div>

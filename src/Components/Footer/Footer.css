@@ -56,13 +56,13 @@ body {
   background-color: #1C2541;
   display: flex;
   padding-bottom: 30px;
-  justify-content: space-between;
+  justify-content: space-around;
   font-family: "Open Sans", sans-serif;
 }
 
 .icon-div {
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   gap: 20px;
   padding-top: 20px;
 }

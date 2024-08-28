@@ -2,45 +2,51 @@ import React from 'react';
 
 function LowerFooter() {
   return (
-    <div>
-      <div className='lower-footer '>
-        <div className='pt-5 '>
-          <span className='upper-text'>FOOTER</span>
-          <div className='pt-4'>
-            <span className='text-secondary fw-medium pt-5'>Complete your style with awesome clothes from us.</span>
-          </div>
-          <div className='main-icon'>
-            <div className='icon-div'>
-              <span><i className="fa-brands fa-facebook"></i></span>
-              <span><i className="fa-brands fa-instagram"></i></span>
-              <span><i className="fa-brands fa-twitter"></i></span>
-              <span><i className="fa-brands fa-linkedin-in"></i></span>
+    <footer className="bg-gray-900 text-white py-10 ">
+      <div className=" mx-auto px-4">
+        <div className="flex flex-col md:flex-row md:justify-between">
+          {/* Column 1 */}
+          <div className="mb-6 md:mb-0 text-center md:text-left">
+            <h3 className="text-xl font-semibold">FOOTER</h3>
+            <p className="text-gray-400 mt-4">Complete your style with awesome clothes from us.</p>
+            <div className="flex justify-center md:justify-start mt-4 space-x-4">
+              <a href="#" aria-label="Facebook" className="text-gray-400 hover:text-gray-300"><i className="fa-brands fa-facebook fa-lg"></i></a>
+              <a href="#" aria-label="Instagram" className="text-gray-400 hover:text-gray-300"><i className="fa-brands fa-instagram fa-lg"></i></a>
+              <a href="#" aria-label="Twitter" className="text-gray-400 hover:text-gray-300"><i className="fa-brands fa-twitter fa-lg"></i></a>
+              <a href="#" aria-label="LinkedIn" className="text-gray-400 hover:text-gray-300"><i className="fa-brands fa-linkedin-in fa-lg"></i></a>
             </div>
           </div>
-        </div>
-        <div className='footer-right-contain text-secondary'>
-          <div className=''>
-            <li className='text-white'>Company</li>
-            <li>About Us</li>
-            <li>Contact Us</li>
-            <li>Support</li>
-            <li>Careers</li>
+          {/* Column 2 */}
+          <div className="text-center md:text-left mb-6 md:mb-0">
+            <ul className="space-y-2">
+              <li className="text-lg font-serif">Company</li>
+              <li className="text-gray-400">About Us</li>
+              <li className="text-gray-400">Contact Us</li>
+              <li className="text-gray-400">Support</li>
+              <li className="text-gray-400">Careers</li>
+            </ul>
           </div>
-          <div className=''>
-            <li className='text-white'>Quick Link</li>
-            <li>Share Location</li>
-            <li>Orders Tracking</li>
-            <li>Size Guide</li>
-            <li>FAQs</li>
+          {/* Column 3 */}
+          <div className="text-center md:text-left mb-6 md:mb-0">
+            <ul className="space-y-2">
+              <li className="text-lg font-serif">Quick Links</li>
+              <li className="text-gray-400">Share Location</li>
+              <li className="text-gray-400">Orders Tracking</li>
+              <li className="text-gray-400">Size Guide</li>
+              <li className="text-gray-400">FAQs</li>
+            </ul>
           </div>
-          <div>
-            <li className='text-white'>Legal</li>
-            <li>Terms & Conditions</li>
-            <li>Privacy Policy</li>
+          {/* Column 4 */}
+          <div className="text-center md:text-left">
+            <ul className="space-y-2">
+              <li className="text-lg font-serif">Legal</li>
+              <li className="text-gray-400">Terms & Conditions</li>
+              <li className="text-gray-400">Privacy Policy</li>
+            </ul>
           </div>
         </div>
       </div>
-    </div>
+    </footer>
   );
 }
 

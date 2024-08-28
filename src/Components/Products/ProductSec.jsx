@@ -51,7 +51,7 @@ function ProductSec() {
   return (
     <>
       <div className="main-product">
-        <div style={{ marginTop: 80, marginBottom: 100 }} className="d-flex gap-3 p-3 justify-content-center flex-wrap card-container slideInUp">
+        <div style={{ marginTop: 80, marginBottom: 100 }} className="flex gap-3 p-3 items-center flex-wrap justify-center card-container slideInUp">
           {loader ? (
             <div style={{ maxWidth: 345, marginTop: 150, marginBottom: 100 }}>
               <CircularProgress color="secondary" />
@@ -60,57 +60,49 @@ function ProductSec() {
             products &&
             products.map((item) => (
               <Card
-                key={item.id}
-                sx={{
-                  maxWidth: 345,
-                  borderRadius: 5,
-                  boxShadow:
-                    "7px 0px 15px 0px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1),-5px 7px 15px -3px rgba(0,0,0,0.1)",
-                }}
-                className="card"
-              >
-                <CardActionArea>
-                  <LazyLoadImage
-                    alt={item.title}
-                    height="300px"
-                    effect="blur" // Optional: add a blur effect or other effects
-                    src={item.thumbnail}
-                    style={{ objectFit: "cover", width: "auto", height: '300px' }}
-                    width="auto"
-                  />
-                  <CardContent>
-                    <Typography gutterBottom variant="h5" style={{ maxHeight: 50 }}>
-                      <div className="d-flex justify-content-around">
-                        <div>{item.title}</div>
-                        <div>{`Rs.${Math.floor(item.price + 1)}`}</div>
-                      </div>
+              key={item.id}
+              className="max-w-sm mx-auto p-3 bg-white shadow-lg rounded-lg overflow-hidden"
+            >
+              <CardActionArea>
+                <LazyLoadImage
+                  alt={item.title}
+                  src={item.thumbnail}
+                  height="300px"
+                  effect="blur"
+                  className="w-full flex justify-center object-cover"
+                />
+                <CardContent className="p-4">
+                  <div className="flex justify-between items-center mb-4">
+                    <Typography gutterBottom variant="h5" className="font-semibold  overflow-hidden text-ellipsis whitespace-nowrap text-gray-800">
+                      {item.title}
                     </Typography>
-                    <Typography
-                      variant="body2"
-                      className="description"
-                      color="text.secondary"
-                    >
-                      {item.description}
+                    <Typography variant="h5" className="text-gray-800 font-bold">
+                      Rs.{Math.floor(item.price + 1)}
                     </Typography>
-                  </CardContent>
-                </CardActionArea>
-                <CardActions className="d-flex justify-content-between mx-4 my-4">
-                  <Link
-                    to={`/products/${item.id}`}
-                    style={{ textDecoration: "none" }}
+                  </div>
+                  <Typography 
+                    variant="body2" 
+                    color="text.secondary" 
+                    className="text-gray-600 overflow-hidden text-ellipsis whitespace-nowrap"
+                    title={item.description}  // Shows full description on hover
                   >
-                    <Button variant="outlined" startIcon={<ShoppingCartIcon />}>
-                      Add to Cart
-                    </Button>
-                  </Link>
-                  <Link
-                    to={`/products/${item.id}`}
-                    style={{ textDecoration: "none" }}
-                  >
-                    <Button variant="outlined">Details</Button>
-                  </Link>
-                </CardActions>
-              </Card>
+                    {item.description}
+                  </Typography>
+                </CardContent>
+              </CardActionArea>
+              <CardActions className="flex justify-between px-4 py-2">
+                <Link to={`/products/${item.id}`} className="text-decoration-none">
+                  <Button variant="outlined" startIcon={<ShoppingCartIcon />} className="text-gray-800 hover:bg-gray-200">
+                    Add to Cart
+                  </Button>
+                </Link>
+                <Link to={`/products/${item.id}`} className="text-decoration-none">
+                  <Button variant="outlined" className="text-gray-800 hover:bg-gray-200">
+                    Details
+                  </Button>
+                </Link>
+              </CardActions>
+            </Card>
             ))
           )}
         </div>

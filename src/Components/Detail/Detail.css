@@ -1,37 +1,11 @@
-.detail-container {
-    /* display: flex; */
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    margin-top: 80px;
-  }
-   
-  .carousel-image {
-    display: block;
-    margin: 0 auto;
-    max-width: 100%;
-    height: auto;
-    object-fit: contain;
-  }
-  
-  .main-container{
-    margin-top: 20px;
-  }
-  .price{
-    margin-top: 20px;
-  }
-  .carousel-caption h3, .carousel-caption p {
-    color: black !important;
-  }
-  
-  .detail-card {
-    width: 100%;
-    max-width: 600px;
-  }
-  
-  .carousel-control-prev-icon,
-  .carousel-control-next-icon {
-    filter: invert(1);
-  }
-  
+/* Add this to your global CSS file or import it into your component's CSS */
+.carousel-wrapper .carousel-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-image {
+  border-radius: 8px;
+  overflow: hidden;
+}

@@ -4,6 +4,7 @@ import category1 from "../../Images/category1.png";
 import category2 from "../../Images/category2.png";
 import category3 from "../../Images/category3.png";
 import { Card, Button } from "react-bootstrap";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 function CardProduct() {
   return (
@@ -17,68 +18,62 @@ function CardProduct() {
       <div className="heading position-relative">NEW ARRIVALS</div>
       <div className="row card-body">
         <div className="col-6 col-md-6 col-sm-12 my-3  category-Card">
-          <Card className="card-box">
-            <Card.Img
+          <Card className="card-box w-full">
+            <LazyLoadImage
               variant="top"
-              className="category-img img-fluid"
+              className="overflow-hidden h-[300px] md:h-[480px] object-cover w-full"
               src={category1}
+              effect="blur"
             />
-            <Card.Body>
-              <Card.Title className="title">Hoodies & Shirt</Card.Title>
-              <div className="d-flex justify-content-between ">
-                <div className="flex-column">
-                  <Card.Text>
-                    <span className="explore">Explore Now!</span>
-                  </Card.Text>
-                </div>
-                <div>
-                  <i class="fa-solid fa-arrow-right fa-xl"></i>
-                </div>
-              </div>
+           <Card.Body>
+              <span className='flex items-center px-4 justify-between '>
+                <span className='title '>
+                  Hoodies & Sweetshirt
+                </span>
+                <span className='explore ml-8 flex w-full'>
+                  Explore Now! <span> <i className="fa-solid fa-arrow-right fa-xl ml-2"></i></span>
+                </span>
+              </span>
             </Card.Body>
           </Card>
         </div>
         <div className="col-6 col-md-6 col-sm-12 my-3  category-Card">
-          <Card className="card-box">
-            <Card.Img
+        <Card className="card-box w-full">
+            <LazyLoadImage
               variant="top"
-              className="category-img img-fluid"
+              className="overflow-hidden h-[300px] md:h-[480px] object-cover w-full"
               src={category2}
+              effect="blur"
             />
-            <Card.Body>
-              <Card.Title className="title">Eletronic & Watches</Card.Title>
-              <div className="d-flex justify-content-between">
-                <div>
-                  <Card.Text>
-                    <span className="explore">Explore Now!</span>
-                  </Card.Text>
-                </div>
-                <div>
-                  <i class="fa-solid fa-arrow-right fa-xl"></i>
-                </div>
-              </div>
+           <Card.Body>
+              <span className='flex items-center px-4 justify-between '>
+                <span className='title '>
+                  Accesoies & Sweetshirt
+                </span>
+                <span className='explore ml-8 flex w-full'>
+                  Explore Now! <span> <i className="fa-solid fa-arrow-right fa-xl ml-2"></i></span>
+                </span>
+              </span>
             </Card.Body>
           </Card>
         </div>
         <div className="col-6 col-md-6 col-sm-12  my-3 category-Card">
-          <Card className="card-box">
-            <Card.Img
+        <Card className="card-box w-full">
+            <LazyLoadImage
               variant="top"
-              className="category-img img-fluid"
+              className="overflow-hidden h-[300px] md:h-[480px] object-cover w-full"
               src={category3}
+              effect="blur"
             />
-            <Card.Body>
-              <Card.Title className="title">Branded Clothes</Card.Title>
-              <div className="d-flex justify-content-between flex-row">
-                <div>
-                  <Card.Text>
-                    <div className="explore">Explore Now!</div>
-                  </Card.Text>
-                </div>
-                <div>
-                  <i class="fa-solid fa-arrow-right fa-xl"></i>
-                </div>
-              </div>
+           <Card.Body>
+              <span className='flex items-center px-4 justify-between '>
+                <span className='title '>
+                  Branded Cloths
+                </span>
+                <span className='explore ml-8 flex w-full'>
+                  Explore Now! <span> <i className="fa-solid fa-arrow-right fa-xl ml-2"></i></span>
+                </span>
+              </span>
             </Card.Body>
           </Card>
         </div>

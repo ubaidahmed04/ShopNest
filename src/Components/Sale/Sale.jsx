@@ -25,7 +25,9 @@ function Sale() {
                             voucher code for your next purchase</div>
                         <div className='text-4 pt-4'>1 June - 10 June 2024</div>
                         <div className='text-3  pb-4'>*Terms & Conditions apply</div>
-                        <Button variant='dark'>SHOP NOW</Button>
+                        <button className="bg-gray-800 text-white font-bold py-2 px-4 rounded hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500">
+                            SHOP NOW
+                        </button>
 
                     </div>
                 </div>

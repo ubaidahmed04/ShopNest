@@ -30,7 +30,10 @@
     "react-hook-form": "^7.50.1",
     "react-lazy-load-image-component": "^1.6.2",
     "react-material-ui-carousel": "^3.4.2",
+    "react-responsive-carousel": "^3.2.23",
     "react-router-dom": "^6.22.1",
+    "react-slick": "^0.30.2",
+    "slick-carousel": "^1.8.1",
     "sweetalert2": "^11.11.0"
   },
   "devDependencies": {

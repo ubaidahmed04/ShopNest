@@ -17,6 +17,7 @@ import Products from './Pages/Products.jsx';
 import VarietyPage from './Pages/VarietyPage.jsx';
 import Verify from './Pages/Verify.jsx';
 import Detail from './Pages/Detail.jsx';
+import 'react-responsive-carousel/lib/styles/carousel.min.css'; 
 
 const router = createBrowserRouter(
   createRoutesFromElements(

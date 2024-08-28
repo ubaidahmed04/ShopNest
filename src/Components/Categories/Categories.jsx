@@ -14,17 +14,14 @@ function Categories() {
           <Card className='card-box'>
             <LazyLoadImage effect="blur" variant="top" className='category-img' src={category1} />
             <Card.Body>
-              <Card.Title className='title'>Hoodies & Sweetshirt</Card.Title>
-              <div className='d-flex justify-content-between flex-row'>
-                <div>
-
-                    <div className='explore'>Explore Now!</div>
-                </div>
-                <div>
-                  <i className="fa-solid fa-arrow-right fa-xl"></i>
-                </div>
-              </div>
-
+              <span className='flex items-center justify-between '>
+                <span className='title'>
+                  Hoody & Sweetshirt
+                </span>
+                <span className='explore ml-8'>
+                  Explore Now! <span> <i className="fa-solid fa-arrow-right fa-xl ml-2"></i></span>
+                </span>
+              </span>
             </Card.Body>
           </Card>
         </div>
@@ -32,19 +29,14 @@ function Categories() {
           <Card className='card-box'>
             <LazyLoadImage effect="blur" variant="top" className='category-img' src={category1} />
             <Card.Body>
-              <Card.Title className='title'>Hoodies & Sweetshirt</Card.Title>
-              <div className='d-flex justify-content-between'>
-                <div>
-                  <Card.Text>
-
-                    <span className='explore'>Explore Now!</span>
-                  </Card.Text>
-                </div>
-                <div>
-                  <i className="fa-solid fa-arrow-right fa-xl ml-2"></i>
-                </div> 
-              </div>
-
+              <span className='flex items-center justify-between '>
+                <span className='title'>
+                  Shirts & Sweetshirt
+                </span>
+                <span className='explore ml-8'>
+                  Explore Now! <span> <i className="fa-solid fa-arrow-right fa-xl ml-2"></i></span>
+                </span>
+              </span>
             </Card.Body>
           </Card>
         </div>
