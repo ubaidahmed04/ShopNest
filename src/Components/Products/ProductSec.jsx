@@ -53,7 +53,7 @@ function ProductSec() {
       <div className="main-product">
         <div style={{ marginTop: 80, marginBottom: 100 }} className="flex gap-3 p-3 items-center flex-wrap justify-center card-container slideInUp">
           {loader ? (
-            <div style={{ maxWidth: 345, marginTop: 150, marginBottom: 100 }}>
+            <div style={{ maxWidth: 345, marginTop: 150, marginBottom: 100,display:"flex",justifyContent:"center",alignItems:"center" }}>
               <CircularProgress color="secondary" />
             </div>
           ) : (
@@ -61,7 +61,7 @@ function ProductSec() {
             products.map((item) => (
               <Card
               key={item.id}
-              className="max-w-sm mx-auto p-3 bg-white shadow-lg rounded-lg overflow-hidden"
+              className="max-w-sm  p-3 bg-white shadow-lg rounded-lg overflow-hidden"
             >
               <CardActionArea>
                 <LazyLoadImage
@@ -69,7 +69,7 @@ function ProductSec() {
                   src={item.thumbnail}
                   height="300px"
                   effect="blur"
-                  className="w-full flex justify-center object-cover"
+                  className="w-[100%] flex justify-center object-cover"
                 />
                 <CardContent className="p-4">
                   <div className="flex justify-between items-center mb-4">

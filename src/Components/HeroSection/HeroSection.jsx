@@ -9,7 +9,7 @@ function HeroSection() {
   return (
     <div className=" hero-section">
       <div className=" left-hero">
-        <span className="rectangle-1 bg-1 ">LET'S</span>
+        <span className="rectangle-1  bg-1">LET'S</span>
         <span className="rectangle-1 bg-2">EXPLORE</span>
         <span className="rectangle-1 bg-3">UNIQUE</span>
         <span className="rectangle-1 bg-4">CLOTHES.</span>

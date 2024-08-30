@@ -1,5 +1,5 @@
 .rectangle-1 {
-    width: auto;
+    /* width: 200px; */
     height: 90.14px;
     color: black;
     font-weight: 900;
@@ -10,15 +10,20 @@
 .bg-1 {
     background-color: #FFFFFF;
     transform: rotate(-2deg);
+    width: 200px;
+
 }
 
 .bg-2 {
     background-color: transparent;
+
 }
 
 .bg-3 {
     background-color: #EBD96B;
     transform: rotate(-2deg);
+    width: 270px;
+
 }
 
 .bg-4 {
