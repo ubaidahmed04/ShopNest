@@ -18,7 +18,7 @@ import logoimg from "../../Images/logo.png";
 import ShopImg from "../../Images/shop.png";
 
 const drawerWidth = 240;
-const navItems = ["Home", "About", "Contact","Products"];
+const navItems = ["Home", "About", "Contact", "Products"];
 
 function DrawerAppBar(props) {
 
@@ -49,11 +49,11 @@ function DrawerAppBar(props) {
       />
 
       <Divider />
-      
+
       <List>
         {navItems.map((item) => (
           <ListItem key={item} disablePadding>
-          
+
             <ListItemButton
               component={Link}
               to={`/${item.toLowerCase()}`}
@@ -92,7 +92,12 @@ function DrawerAppBar(props) {
             sx={{ mr: "auto", display: { sm: "none" } }}
           >
             <span >
-              <i className="fa-solid fa-bars fa-2x menu-icon"></i>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 text-black h-6">
+  <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12H12m-8.25 5.25h16.5" />
+</svg>
+
+
+              {/* <i className="fa-solid fa-bars fa-lg menu-icon"></i> */}
             </span>
           </IconButton>
           <Typography
@@ -117,7 +122,7 @@ function DrawerAppBar(props) {
                 key={item}
                 sx={{
                   color: "#000000",
-                  transition:"transform 0.3s,ease 0.3s",
+                  transition: "transform 0.3s,ease 0.3s",
 
                   "&:hover": {
                     backgroundColor: "#FFDD10",
@@ -141,7 +146,7 @@ function DrawerAppBar(props) {
               Sign Up
             </Button>
           </Link>
-          
+
         </Toolbar>
       </AppBar>
       <nav>
