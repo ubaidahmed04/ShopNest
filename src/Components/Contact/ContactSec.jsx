@@ -14,11 +14,11 @@ function ContactSec() {
     emailjs.sendForm('service_dttlny9', 'template_akza2cj', form.current, 'xZzt_m_2tW7AHgdJu')
       .then(
         () => {
-          Swal.fire({ title: 'Good job!', text: 'Email Sent Successfully', icon: 'success' });
+          Swal.fire({ title: 'Good Job!', text: 'Email Sent Successfully', icon: 'success' });
           reset();
         },
         (error) => {
-          Swal.fire({ icon: 'error', title: 'Something went wrong', text: 'Failed to send email  the message. Please try again.' });
+          Swal.fire({ icon: 'error', title: 'Something went wrong', text: 'Failed to send the message. Please try again.' });
           console.error("Email send error:", error);
         }
       );
@@ -102,7 +102,7 @@ function ContactSec() {
                   multiline
                   rows={3}
                   variant="standard"
-                  placeholder="Compose your message here"
+                  placeholder="Compose your message here..."
                   className="w-full"
                   name="message"
                   {...register('message', { required: 'Message is required' })}

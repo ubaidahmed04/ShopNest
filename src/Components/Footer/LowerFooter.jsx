@@ -32,7 +32,7 @@ function LowerFooter() {
               <li className="text-lg font-serif">Quick Links</li>
               <li className="text-gray-400">Share Location</li>
               <li className="text-gray-400">Orders Tracking</li>
-              <li className="text-gray-400">Size Guide</li>
+              <li className="text-gray-400">Guide</li>
               <li className="text-gray-400">FAQs</li>
             </ul>
           </div>
@@ -41,7 +41,7 @@ function LowerFooter() {
             <ul className="space-y-2">
               <li className="text-lg font-serif">Legal</li>
               <li className="text-gray-400">Terms & Conditions</li>
-              <li className="text-gray-400">Privacy Policy</li>
+              <li className="text-gray-400">Privacy && Policies</li>
             </ul>
           </div>
         </div>
