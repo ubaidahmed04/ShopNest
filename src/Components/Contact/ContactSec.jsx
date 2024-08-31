@@ -14,7 +14,7 @@ function ContactSec() {
     emailjs.sendForm('service_dttlny9', 'template_akza2cj', form.current, 'xZzt_m_2tW7AHgdJu')
       .then(
         () => {
-          Swal.fire({ title: 'Good job!', text: 'Sent Successfully', icon: 'success' });
+          Swal.fire({ title: 'Good job!', text: 'Email Sent Successfully', icon: 'success' });
           reset();
         },
         (error) => {
