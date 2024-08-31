@@ -40,9 +40,10 @@ function LowerFooter() {
           {/* Column 4 */}
           <div className="text-center md:text-left">
             <ul className="space-y-2">
-              <li className="text-lg font-serif">Legal</li>
-              <li className="text-gray-400">Terms & Conditions</li>
-              <li className="text-gray-400">Privacy && Policies</li>
+            <li className="text-lg font-serif">Legalities</li>
+<li className="text-gray-400">Usage Guidelines</li>
+<li className="text-gray-400">Privacy & Policy Overview</li>
+
             </ul>
           </div>
         </div>
