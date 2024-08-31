@@ -18,7 +18,7 @@ function ContactSec() {
           reset();
         },
         (error) => {
-          Swal.fire({ icon: 'error', title: 'Something went wrong', text: 'Failed to send the message. Please try again.' });
+          Swal.fire({ icon: 'error', title: 'Something went wrong', text: 'Failed to send email  the message. Please try again.' });
           console.error("Email send error:", error);
         }
       );
