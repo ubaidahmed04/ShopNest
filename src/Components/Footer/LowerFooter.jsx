@@ -29,11 +29,12 @@ function LowerFooter() {
           {/* Column 3 */}
           <div className="text-center md:text-left mb-6 md:mb-0">
             <ul className="space-y-2">
-              <li className="text-lg font-serif">Quick Links</li>
-              <li className="text-gray-400">Share Location</li>
-              <li className="text-gray-400">Orders Tracking</li>
-              <li className="text-gray-400">Guide</li>
-              <li className="text-gray-400">FAQs</li>
+              <li className="text-lg font-serif">Resource Hub</li>
+              <li className="text-gray-400">Locate Us</li>
+              <li className="text-gray-400">Track My Journey</li>
+              <li className="text-gray-400">Navigator</li>
+              <li className="text-gray-400">Common Queries</li>
+
             </ul>
           </div>
           {/* Column 4 */}
