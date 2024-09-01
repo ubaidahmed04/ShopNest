@@ -17,7 +17,7 @@ function About() {
       </div>
 
       <div className="content-section">
-        <p>This section contains information about our company and the products we offer.</p>
+        <p>At ShopNest, we deliver high-quality, innovative products designed to meet the evolving needs of our customers.</p>
       </div>
 
       <div className="parallax-section">
