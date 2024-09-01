@@ -4,6 +4,7 @@ import image1 from '../../Images/image1.jpg';
 import image2 from '../../Images/image2.jpg';
 import image3 from '../../Images/image3.jpg';
 import aboutUs from '../../Images/aboutPage.jpg';
+import { LazyLoadImage } from 'react-lazy-load-image-component'
 
 function About() {
   return (
@@ -22,7 +23,8 @@ function About() {
       <div className="parallax-section">
         <div className="parallax-item">
           <div className="parallax-image">
-            <img src={image1} alt="Mission 1" />
+          <LazyLoadImage effect="blur" variant="top"  src={image1} />
+            {/* <LazyLoadImage src={image1} alt="Mission 1" /> */}
           </div>
           <div className="parallax-text">
             <h2>Our Mission</h2>
@@ -32,7 +34,8 @@ function About() {
 
         <div className="parallax-item">
           <div className="parallax-image">
-            <img src={image2} alt="Mission 2" />
+          <LazyLoadImage effect="blur" variant="top"  src={image2} />
+            {/* <img src={image2} alt="Mission 2" /> */}
           </div>
           <div className="parallax-text">
             <h2>Our Values</h2>
@@ -42,7 +45,8 @@ function About() {
 
         <div className="parallax-item">
           <div className="parallax-image">
-            <img src={image3} alt="Mission 3" />
+          <LazyLoadImage effect="blur" variant="top"  src={image3} />
+            {/* <img src={image3} alt="Mission 3" /> */}
           </div>
           <div className="parallax-text">
             <h2>Our Vision</h2>
