@@ -49,7 +49,7 @@ function ContactSec() {
                 </div>
                 <div className="flex items-center gap-4">
                   <span><i className="fa-solid fa-location-dot text-gray-400 text-2xl"></i></span>
-                  <span className="text-sm font-medium">75800 Karachi PK</span>
+                  <span className="text-sm font-medium">75002 Karachi PK</span>
                 </div>
                 <div className="main-icon flex justify-around  px-12 gap-4">
                   <div className="icon-div">
