@@ -42,7 +42,7 @@ function LowerFooter() {
             <ul className="space-y-2">
             <li className="text-lg font-serif">Legalities</li>
 <li className="text-gray-400">Usage Guidelines</li>
-<li className="text-gray-400">Privacy & Policy Overview</li>
+<li className="text-gray-400">Privacy & Policy </li>
 
             </ul>
           </div>
